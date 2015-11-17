@@ -13,4 +13,5 @@ for subdir in *; do
   cd -
 done
 awk '!seen[$0]++' ./.clone > ./clone
+rm ./.clone
 chmod a+x ./clone
