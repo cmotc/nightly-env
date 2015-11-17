@@ -65,7 +65,7 @@ you don't want to run.)
 
         #After sourcing in helper.sh
         build		#run all build scripts
-        build push 	#run all build scripts and push the packages
+        build upload 	#run all build scripts and push the packages
 
   * clean: delete all previously generated files, tar.gz, .dsc, .build .changes,
 and .deb. When ./clean deletes all folders ending in a numeric date, so will
