@@ -7,6 +7,9 @@ projects folder whenever I need to without a bunch of hassle. This is not likely
 to be useful to anybody else unless they adapt it to use their own projects.
 It's simple enough to find out where.
 
+For a more detailed list of the projects I sometimes build with this script,
+look at (remotes.md)[https://github.com/cmotc/nightly-env/blob/master/remotes.md]
+
 usage
 =====
 
