@@ -15,7 +15,7 @@ build(){
 			$SCRIPT
 		fi
 	done
-	if [ "$1" = "push" ] ; then
+	if [ "$1" = "upload" ] ; then
 		upload
 	fi
 }
