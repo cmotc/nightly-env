@@ -28,8 +28,6 @@ or obviated by helper.sh
 .changes, and .deb. When ./clean deletes all folders ending in a numeric date,
 so will helper.sh->clean
 
-         ./clean
-
   * ./push: push all the built packages up to the binary repository. In this
 case I use my own little hack to make it possible to host packages on github.
 I'd like to also support things like aptly and launchpad eventually, but this
@@ -64,6 +62,10 @@ longer a static list of projects to build. Any project with a ./.makescripts/
 file is automatically detected. The ./.makescripts folder will also be obsolete
 soon. For now, it's left in to accomodate partial builds(chmod -x any scripts
 you don't want to run.)
+
+        #After sourcing in helper.sh
+        build		#run all build scripts
+        build push 	#run all build scripts and push the packages
 
   * clean: delete all previously generated files, tar.gz, .dsc, .build .changes,
 and .deb. When ./clean deletes all folders ending in a numeric date, so will
