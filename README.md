@@ -5,7 +5,8 @@ I build from source. Sometimes I reformat, and I can't seem to touch a portable
 hard drive without it exploding. This lets me build, clean, and regenerate my
 projects folder whenever I need to without a bunch of hassle. This is not likely
 to be useful to anybody else unless they adapt it to use their own projects.
-It's simple enough to find out where.
+It's simple enough to find out where, but I'll document how as it becomes more
+solid if I don't adapt it for general use myself in the process.
 
 For a more detailed list of the projects I sometimes build with this script,
 look at (remotes.md)[https://github.com/cmotc/nightly-env/blob/master/remotes.md]
