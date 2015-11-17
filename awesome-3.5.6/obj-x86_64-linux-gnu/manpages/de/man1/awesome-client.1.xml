@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>awesome-client(1)</title>
+</refentryinfo>
+<refmeta>
+<refentrytitle>awesome-client</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>awesome-client</refname>
+    <refpurpose>awesome Fenstermanager externe Befehlsschnittstelle</refpurpose>
+</refnamediv>
+<refsect1 id="_syntax">
+<title>SYNTAX</title>
+<simpara>awesome-client</simpara>
+</refsect1>
+<refsect1 id="_beschreibung">
+<title>BESCHREIBUNG</title>
+<simpara>awesome-client ist eine externe Befehlsschnittstelle für awesome.
+Es kommuniziert über D-Bus mit awesome um die Möglichkeit zu bieten, Lua-Anweisungen von extern auszuführen.</simpara>
+</refsect1>
+<refsect1 id="_benutzung">
+<title>BENUTZUNG</title>
+<simpara>awesome-client liest Befehle von der Standard-Eingabe und sendet diese über D-BUS an awesome.
+Wenn <emphasis>rlwrap</emphasis> installiert ist wird es benutzt, um eine readline-Kommandozeileneingabe zu ermöglichen.</simpara>
+<simpara>Das Modul <emphasis>awful.remote</emphasis> muss geladen sein, um diesen Befehl zu benutzen.</simpara>
+</refsect1>
+<refsect1 id="_siehe_auch">
+<title>SIEHE AUCH</title>
+<simpara>awesome(1) awesomerc(5)</simpara>
+</refsect1>
+<refsect1 id="_autoren">
+<title>AUTOREN</title>
+<simpara>Julien Danjou &lt;<ulink url="mailto:julien@danjou.info">julien@danjou.info</ulink>&gt;</simpara>
+</refsect1>
+<refsect1 id="_www">
+<title>WWW</title>
+<simpara><ulink url="http://awesome.naquadah.org">http://awesome.naquadah.org</ulink></simpara>
+</refsect1>
+</refentry>

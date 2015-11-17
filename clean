@@ -1,0 +1,3 @@
+#! /bin/sh
+rm *.build *.dsc *.tar.xz *.deb *.*.tar.xz *.changes
+rm log

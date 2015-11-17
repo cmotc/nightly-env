@@ -1,0 +1,99 @@
+'\" t
+.\"     Title: awesomerc
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 09/22/2015
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "AWESOMERC" "5" "09/22/2015" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+awesomerc \- File di configurazione per il gestore di finestre awesome
+.SH "SINOSSI"
+.sp
+\fBawesome\fR cerca un file di configurazione nel seguente ordine:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+$XDG_CONFIG_HOME/awesome/rc\&.lua
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+$HOME/\&.config/awesome/rc\&.lua
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+XDG_CONFIG_DIRS/awesome/rc\&.lua
+.RE
+.SH "DESCRIZIONE"
+.sp
+Il file \fBrc\&.lua\fR contiene informazione di configurazione per \fBawesome\fR\&. Pu\(`o essere utilizzato per configurare il comportamento e l\(cqaspetto di awesome in vari modi\&. Pu\(`o essere assimilato a un programma/script Lua eseguito all\(cqavvio da \fBawesome\fR\&. Perci\(`o, dovrebbe usare l\(cqAPI Lua di awesome descritta nella sezione API\&. Questo file \(`e letto all\(cqavvio\&.
+.SH "API LUA DI AWESOME"
+.sp
+La documentazione per l\(cqAPI Lua pu\(`o essere trovata nella directory luadoc\&.
+.SH "FORMATO COLORI"
+.sp
+Il formato dei colori in \fBawesome\fR \(`e o un nome colore standard di X (come blue, darkblue, lightred, ecc\&.) o un colore in formato esadecimale (#rrggbb o #rrggbbaa)\&. Usando il formato esadecimale, si pu\(`o anche specificare un canale alpha: ci\(`o significa che #00ff00 disegner\(`a un verde puro, ma #00ff00aa imposter\(`a il canale alpha a \(oqaa\(cq e mescoler\(`a il verde con il colore sottostante\&.
+.SH "FORMATO TESTI"
+.sp
+Si possono usare le marcature (makup) Pango in una stringa di testo\&. Questo consente di formattare il testo generato dentro i widgets\&. La documentazione per i markup Pango pu\(`o essere trovata nella documentazione Pango a \m[blue]\fBhttp://library\&.gnome\&.org/devel/pango/stable/PangoMarkupFormat\&.html\fR\m[]\&.
+.sp
+Un esempio di un markup Pango: <span weight="bold" foreground="#336699">\&...</span>\&.
+.SH "VEDI ANCHE"
+.sp
+awesome(1) awesome\-client(1)
+.SH "AUTORI"
+.sp
+Scritto da Julien Danjou <\m[blue]\fBjulien@danjou\&.info\fR\m[]\&\s-2\u[1]\d\s+2>\&.
+.SH "WWW"
+.sp
+\m[blue]\fBhttp://awesome\&.naquadah\&.org\fR\m[]
+.SH "TRADUZIONE"
+.sp
+Questa pagina di manuale \(`e stata tradotta da Gianluca Fiore\&.
+.SH "NOTES"
+.IP " 1." 4
+julien@danjou.info
+.RS 4
+\%mailto:julien@danjou.info
+.RE

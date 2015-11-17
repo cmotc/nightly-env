@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>awesome(1)</title>
+</refentryinfo>
+<refmeta>
+<refentrytitle>awesome</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>awesome</refname>
+    <refpurpose>gestor de ventanas awesome</refpurpose>
+</refnamediv>
+<refsect1 id="_sinopsis">
+<title>SINOPSIS</title>
+<simpara><emphasis role="strong">awesome</emphasis> [<emphasis role="strong">-v</emphasis> | <emphasis role="strong">--version</emphasis>] [<emphasis role="strong">-h</emphasis> | <emphasis role="strong">--help</emphasis>] [<emphasis role="strong">-c</emphasis> | <emphasis role="strong">--config</emphasis> <emphasis>FICHERO</emphasis>] [<emphasis role="strong">-k</emphasis> | <emphasis role="strong">--check</emphasis>]</simpara>
+</refsect1>
+<refsect1 id="_descripción">
+<title>DESCRIPCIÓN</title>
+<simpara><emphasis role="strong">awesome</emphasis> es un gestor de ventanas para el sistema de ventanas X. Organiza las
+ventanas utilizando diferentes disposiciones o esquemas (layouts), como por
+ejemplo superpuestas o en mosaico. Cualquiera de los esquemas puede ser
+aplicado dinámicamente, optimizando el entorno para la aplicación que se
+esté ejecutando o la tarea que se esté llevando a cabo.</simpara>
+<simpara>En los esquemas en mosaico la pantalla se divide en un área principal y un
+área de apilamiento. El área principal contiene las ventanas que necesitan
+mayor cantidad de atención, mientras que el área de apilamiento contiene el
+resto de ventanas. En los esquemas flotantes las ventanas pueden ser
+desplazadas y redimensionadas por el usuario sin restricciones. Las ventanas
+de diálogo siempre se consideran flotantes, independientemente del esquema
+que esté aplicado en ese momento. El esquema en espiral y el menguante son
+casos particulares de los esquemas en mosaico, en los que el área de
+apilamiento se organiza, respectivamente, en forma de espiral o dividiéndose
+en rectángulos siguiendo un patrón fractal.</simpara>
+<simpara>Las ventanas se agrupan por etiquetas en awesome. Cada ventana puede tener una
+o más etiquetas. Al seleccionar una etiqueta se muestran todas las ventanas
+que tienen esa etiqueta.</simpara>
+<simpara>En <emphasis role="strong">awesome</emphasis> se pueden añadir wiboxes que pueden mostrar cualquier valor:
+todas las etiquetas existentes, el esquema que está seleccionado, el título
+de las ventanas visibles, texto, etc.</simpara>
+</refsect1>
+<refsect1 id="_opciones">
+<title>OPCIONES</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">-v</emphasis>, <emphasis role="strong">--version</emphasis>
+</term>
+<listitem>
+<simpara>
+    Muestra la información de la versión en la salida estándar, y sale del programa.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-h</emphasis>, <emphasis role="strong">--help</emphasis>
+</term>
+<listitem>
+<simpara>
+    Muestra información de ayuda, y sale del programa.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-c</emphasis>, <emphasis role="strong">--config</emphasis> <emphasis>FICHERO</emphasis>
+</term>
+<listitem>
+<simpara>
+    Utiliza un fichero de configuración alternativo en lugar de
+<emphasis>$XDG_CONFIG_HOME/awesome/rc.lua</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-k</emphasis>, <emphasis role="strong">--check</emphasis>
+</term>
+<listitem>
+<simpara>
+    Verifica la sintaxis del archivo de configuración.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-a</emphasis>, <emphasis role="strong">--no-argb</emphasis>
+</term>
+<listitem>
+<simpara>
+    No utilice colores ARGB.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+<refsect1 id="_atajos_de_ratón_por_omisión">
+<title>ATAJOS DE RAtÓN POR OMISIÓN</title>
+<refsect2 id="_navegación">
+<title>Navegación</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Botón1</emphasis> en el nombre de una etiqueta
+</term>
+<listitem>
+<simpara>
+    Muestra las ventanas con esa etiqueta.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Botón4</emphasis>, <emphasis role="strong">Botón5</emphasis> en el nombre de una etiqueta
+</term>
+<listitem>
+<simpara>
+    Cambia a la etiqueta anterior o siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Botón4</emphasis>, <emphasis role="strong">Botón5</emphasis> en la ventana de fondo
+</term>
+<listitem>
+<simpara>
+    Cambia a la etiqueta anterior o siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Button1</emphasis>, <emphasis role="strong">Button3</emphasis>, <emphasis role="strong">Button4</emphasis>, <emphasis role="strong">Button5</emphasis> en el símbolo de esquema
+</term>
+<listitem>
+<simpara>
+    Cambia al esquema anterior o siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_modificación_del_esquema">
+<title>Modificación del esquema</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Botón1</emphasis> en el nombre de una etiqueta
+</term>
+<listitem>
+<simpara>
+    Etiqueta al cliente actual únicamente con esa etiqueta.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Botón</emphasis> en el nombre de una etiqueta
+</term>
+<listitem>
+<simpara>
+    Activa o desactiva esa etiqueta para el cliente actual.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Botón3</emphasis> en el nombre de una etiqueta
+</term>
+<listitem>
+<simpara>
+    Añade el contenido de esa etiqueta a la vista actual.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Botón1</emphasis> en una ventana cliente
+</term>
+<listitem>
+<simpara>
+    Mueve la ventana.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Botón3</emphasis> en una ventana cliente
+</term>
+<listitem>
+<simpara>
+    Redimensiona la ventana.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+<refsect1 id="_atajos_de_teclado_por_omisión">
+<title>ATAJOS DE TECLADO POR OMISIÓN</title>
+<refsect2 id="_control_del_gestor_de_ventanas">
+<title>Control del gestor de ventanas</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + r</emphasis>
+</term>
+<listitem>
+<simpara>
+    Reinicia <emphasis role="strong">awesome</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + q</emphasis>
+</term>
+<listitem>
+<simpara>
+    Sale de <emphasis role="strong">awesome</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + r</emphasis>
+</term>
+<listitem>
+<simpara>
+    Ejecuta una línea de comandos en la barra de estado.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + x</emphasis>
+</term>
+<listitem>
+<simpara>
+    Ejecuta una línea de comandos de Lua en la barra de estado.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Intro</emphasis>
+</term>
+<listitem>
+<simpara>
+    Lanza una instancia del emulador de terminal.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + w</emphasis>
+</term>
+<listitem>
+<simpara>
+    Despliega el menú principal.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_clientes">
+<title>Clientes</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + m</emphasis>
+</term>
+<listitem>
+<simpara>
+    Maximiza el cliente actual.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + n</emphasis>
+</term>
+<listitem>
+<simpara>
+    Minimiza el cliente actual.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + n</emphasis>
+</term>
+<listitem>
+<simpara>
+    Restaurar el cliente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + f</emphasis>
+</term>
+<listitem>
+<simpara>
+    Activa o desactiva el modo de pantalla completa para el cliente actual.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + c</emphasis>
+</term>
+<listitem>
+<simpara>
+    Termina (kill) el cliente actual.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + t</emphasis>
+</term>
+<listitem>
+<simpara>
+    Activa o desactiva el modo "siempre visible" para el cliente actual.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_navegación_2">
+<title>Navegación</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Establece el foco sobre el cliente siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Establece el foco sobre el cliente anterior.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + u</emphasis>
+</term>
+<listitem>
+<simpara>
+    Establece el foco sobre el primer cliente urgente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Left</emphasis>
+</term>
+<listitem>
+<simpara>
+    Muestra la etiqueta anterior.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Right</emphasis>
+</term>
+<listitem>
+<simpara>
+    Muestra la etiqueta siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Muestra los contenidos de la etiqueta 1-9.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Establece el foco en la pantalla siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Establece el foco en la pantalla anterior.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Escape</emphasis>
+</term>
+<listitem>
+<simpara>
+    Establece el foco en el conjunto de etiquetas seleccionado anteriormente.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_modificación_del_esquema_2">
+<title>Modificación del esquema</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Intercambia el cliente actual con el cliente siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Intercambia el cliente actual con el cliente anterior.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + o</emphasis>
+</term>
+<listitem>
+<simpara>
+    Envía el cliente a la pantalla siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Decrementa la anchura del área principal en un 5%.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Incrementa la anchura del área principal en un 5%.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Incrementa el número de ventanas en el área principal en 1.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Decrementa el número de ventanas en el área principal en 1.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Incrementa el número de columnas en el área de apilamiento en 1.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Decrementa el número de columnas en el área de apilamiento en 1.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + space</emphasis>
+</term>
+<listitem>
+<simpara>
+    Cambia al esquema siguiente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + espacio</emphasis>
+</term>
+<listitem>
+<simpara>
+    Cambia al esquema anterior.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + espacio</emphasis>
+</term>
+<listitem>
+<simpara>
+    Activa o desactiva el estado flotante del cliente actual
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + Intro</emphasis>
+</term>
+<listitem>
+<simpara>
+    Intercambia el cliente actual con el cliente en el área principal
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Activa o desactiva la vista de la etiqueta 1-9.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Etiqueta al cliente actual con la etiqueta 1-9.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Mayús + Control + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Activa o desactiva la etiqueta 1-9 para el cliente actual.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+<refsect1 id="_personalización">
+<title>PERSONALIZACIÓN</title>
+<simpara><emphasis role="strong">awesome</emphasis> se configura creando un fichero <emphasis>$XDG_CONFIG_HOME/awesome/rc.lua</emphasis>
+personalizado.</simpara>
+</refsect1>
+<refsect1 id="_señales">
+<title>SEÑALES</title>
+<simpara>La señal SIGHUP provoca que <emphasis role="strong">awesome</emphasis> se reinicie.</simpara>
+</refsect1>
+<refsect1 id="_véase_también">
+<title>VÉASE TAMBIÉN</title>
+<simpara><emphasis role="strong">awesomerc</emphasis>(5) <emphasis role="strong">awesome-client</emphasis>(1)</simpara>
+</refsect1>
+<refsect1 id="_fallos">
+<title>FALLOS</title>
+<simpara>Por supuesto, <emphasis role="strong">awesome</emphasis> no tiene fallos. Pero es posible que tenga
+comportamientos inesperados.</simpara>
+</refsect1>
+<refsect1 id="_autores">
+<title>AUTORES</title>
+<simpara>Julien Danjou &lt;<ulink url="mailto:julien@danjou.info">julien@danjou.info</ulink>&gt; y otros.</simpara>
+</refsect1>
+<refsect1 id="_www">
+<title>WWW</title>
+<simpara><ulink url="http://awesome.naquadah.org">http://awesome.naquadah.org</ulink></simpara>
+</refsect1>
+<refsect1 id="_traducción">
+<title>TRADUCCIÓN</title>
+<simpara>Esta página de manual ha sido traducida por Diego Moreda.</simpara>
+</refsect1>
+</refentry>

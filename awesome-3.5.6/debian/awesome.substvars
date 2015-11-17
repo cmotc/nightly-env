@@ -1,0 +1,2 @@
+shlibs:Depends=libc6 (>= 2.14), libcairo2 (>= 1.12.0), libdbus-1-3 (>= 1.0.2), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.30.0), liblua5.1-0, libstartup-notification0 (>= 0.10), libx11-6, libxcb-cursor0 (>= 0.0.99), libxcb-icccm4 (>= 0.4.1), libxcb-keysyms1 (>= 0.4.0), libxcb-randr0 (>= 1.1), libxcb-render0, libxcb-shape0, libxcb-util0 (>= 0.3.8), libxcb-xinerama0, libxcb-xtest0, libxcb1, libxdg-basedir1
+misc:Depends=

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>awesomerc(5)</title>
+</refentryinfo>
+<refmeta>
+<refentrytitle>awesomerc</refentrytitle>
+<manvolnum>5</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>awesomerc</refname>
+    <refpurpose>Konfigurationsdatei für den awesome Fenstermanager</refpurpose>
+</refnamediv>
+<refsect1 id="_syntax">
+<title>SYNTAX</title>
+<simpara><emphasis role="strong">awesome</emphasis> sucht nach einer Konfigurationsdatei in der folgenden Reihenfolge:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+$XDG_CONFIG_HOME/awesome/rc.lua
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+$HOME/.config/awesome/rc.lua
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+XDG_CONFIG_DIRS/awesome/rc.lua
+</simpara>
+</listitem>
+</itemizedlist>
+</refsect1>
+<refsect1 id="_beschreibung">
+<title>BESCHREIBUNG</title>
+<simpara>Die <emphasis role="strong">rc.lua</emphasis> Datei beinhaltet Konfigurationen für <emphasis role="strong">awesome</emphasis>. Sie kann benutzt werden um das Verhalten und das Aussehen von awesome auf verschiedene Weise zu beeinflussen.
+Die Konfigurationsdatei kann als Lua-Programm verstanden werden, welches beim Start von <emphasis role="strong">awesome</emphasis> ausgeführt wird.
+Hierfür sollte sie die awesome LUA API benutzen, welche im Abschnitt API vorgestellt wird.</simpara>
+</refsect1>
+<refsect1 id="_awesome_lua_api">
+<title>AWESOME LUA API</title>
+<simpara>Dokumentationen für die Lua API befinden sich im Verzeichnis luadoc.</simpara>
+</refsect1>
+<refsect1 id="_farbformatierung">
+<title>FARBFORMATIERUNG</title>
+<simpara>Die Farbformate in <emphasis role="strong">awesome</emphasis> sind entweder die Standard X Farbnamen
+(blue, darkblue, lightred, etc) oder eine Hexadezimaldarstellung der Farbe (#rrggbb
+oder #rrggbbaa).
+Bei der Nutzung der Hexadezimaldarstellung kann zudem ein Alpha-Kanal genutzt werden.
+Dies bedeutet, dass #00ff00 grün zeichnen wird, aber #00ff00aa setzt den Alpha-Kanal auf &#8216;aa&#8217; und lässt somit die darunter liegende Farbe durch den grünen Teil durchschimmern.</simpara>
+</refsect1>
+<refsect1 id="_textformaterung">
+<title>TEXTFORMATERUNG</title>
+<simpara>Sie können Pango-Markups in Texten benutzen.
+Dies erlaubt die Formatierung von Texten, welche in einem Widget dargestellt werden.
+Die Pango-Markup Dokumentation können sie in der Dokumentation zu Pango unter
+<ulink url="http://library.gnome.org/devel/pango/stable/PangoMarkupFormat.html">http://library.gnome.org/devel/pango/stable/PangoMarkupFormat.html</ulink> nachlesen.</simpara>
+<simpara>Ein Pango-Markup Beispiel: &lt;span weight="bold" foreground="#336699"&gt;&#8230;&lt;/span&gt;.</simpara>
+</refsect1>
+<refsect1 id="_siehe_auch">
+<title>SIEHE AUCH</title>
+<simpara>awesome(1) awesome-client(1)</simpara>
+</refsect1>
+<refsect1 id="_autoren">
+<title>AUTOREN</title>
+<simpara>Geschrieben von Julien Danjou &lt;<ulink url="mailto:julien@danjou.info">julien@danjou.info</ulink>&gt;.</simpara>
+</refsect1>
+<refsect1 id="_www">
+<title>WWW</title>
+<simpara><ulink url="http://awesome.naquadah.org">http://awesome.naquadah.org</ulink></simpara>
+</refsect1>
+</refentry>

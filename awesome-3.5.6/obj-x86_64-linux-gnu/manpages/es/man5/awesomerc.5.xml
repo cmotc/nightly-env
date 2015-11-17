@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>awesomerc(5)</title>
+</refentryinfo>
+<refmeta>
+<refentrytitle>awesomerc</refentrytitle>
+<manvolnum>5</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>awesomerc</refname>
+    <refpurpose>Fichero de configuración para el gestor de ventanas awesome</refpurpose>
+</refnamediv>
+<refsect1 id="_sinopsis">
+<title>SINOPSIS</title>
+<simpara><emphasis role="strong">awesome</emphasis> busca un fichero de configuración siguiendo este orden:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+$XDG_CONFIG_HOME/awesome/rc.lua
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+$HOME/.config/awesome/rc.lua
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+XDG_CONFIG_DIRS/awesome/rc.lua
+</simpara>
+</listitem>
+</itemizedlist>
+</refsect1>
+<refsect1 id="_descripción">
+<title>DESCRIPCIÓN</title>
+<simpara>El fichero <emphasis role="strong">rc.lua</emphasis> contiene la información de configuración de <emphasis role="strong">awesome</emphasis>.
+Se utiliza para configurar de diferentes maneras el comportamiento y el
+aspecto del gestor de ventanas. Puede ser entendido como un programa o script
+en Lua que es ejecutado por <emphasis role="strong">awesome</emphasis> al iniciarse. Por lo tanto, debe utilizar
+el API Lua de awesome que se describe en la sección API. Este fichero es
+leído al iniciarse el gestor de ventanas.</simpara>
+</refsect1>
+<refsect1 id="_api_lua_de_awesome">
+<title>API LUA DE AWESOME</title>
+<simpara>La documentación de la API Lua se encuentra en el directorio luadoc.</simpara>
+</refsect1>
+<refsect1 id="_formato_de_color">
+<title>FORMATO DE COLOR</title>
+<simpara>Para especificar un color en <emphasis role="strong">awesome</emphasis> se puede utilizar un nombre de color
+estándar de X, o utilizar un color en formato hexadecimal (#rrggbb o
+#rrggbbaa).
+Al utilizar el formato hexadecimal es posible especificar también un canal
+alpha que representa la opacidad: el color #00ff00 se dibujará como verde,
+pero el color #00ff00aa, con un valor de opacidad &#8216;aa&#8217; se dibujará
+combinando el verde con el color del fondo sobre el que es dibujado.</simpara>
+</refsect1>
+<refsect1 id="_formato_de_texto">
+<title>FORMATO DE TEXTO</title>
+<simpara>Las cadenas de texto permiten utilizar elementos del lenguaje de marcado
+Pango. Esto permite añadir formato a los textos que se visualizan dentro de
+los widgets.
+La documentación relacionada con el lenguaje de marcado Pango se encuentra
+dentro de la documentación de Pango en
+<ulink url="http://library.gnome.org/devel/pango/stable/PangoMarkupFormat.html">http://library.gnome.org/devel/pango/stable/PangoMarkupFormat.html</ulink>.</simpara>
+<simpara>Un ejemplo de lenguaje de marcado Pango:
+&lt;span weight="bold" foreground="#336699"&gt;&#8230;&lt;/span&gt;.</simpara>
+</refsect1>
+<refsect1 id="_véase_también">
+<title>VÉASE TAMBIÉN</title>
+<simpara>awesome(1) awesome-client(1)</simpara>
+</refsect1>
+<refsect1 id="_autores">
+<title>AUTORES</title>
+<simpara>Escrito por Julien Danjou &lt;<ulink url="mailto:julien@danjou.info">julien@danjou.info</ulink>&gt;.</simpara>
+</refsect1>
+<refsect1 id="_www">
+<title>WWW</title>
+<simpara><ulink url="http://awesome.naquadah.org">http://awesome.naquadah.org</ulink></simpara>
+</refsect1>
+<refsect1 id="_traducción">
+<title>TRADUCCIÓN</title>
+<simpara>Esta página de manual ha sido traducida por Diego Moreda.</simpara>
+</refsect1>
+</refentry>

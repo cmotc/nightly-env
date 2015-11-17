@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>awesome(1)</title>
+</refentryinfo>
+<refmeta>
+<refentrytitle>awesome</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>awesome</refname>
+    <refpurpose>gestionnaire de fenêtres awesome</refpurpose>
+</refnamediv>
+<refsynopsisdiv id="_synopsis">
+<simpara><emphasis role="strong">awesome</emphasis> [<emphasis role="strong">-v</emphasis> | <emphasis role="strong">--version</emphasis>] [<emphasis role="strong">-h</emphasis> | <emphasis role="strong">--help</emphasis>] [<emphasis role="strong">-c</emphasis> | <emphasis role="strong">--config</emphasis> <emphasis>FILE</emphasis>] [<emphasis role="strong">-k</emphasis> | <emphasis role="strong">--check</emphasis>]</simpara>
+</refsynopsisdiv>
+<refsect1 id="_description">
+<title>DESCRIPTION</title>
+<simpara><emphasis role="strong">awesome</emphasis> est un gestionnaire de fenêtres pour X.
+Il gère les fenêtres avec diverses mises en page, par exemple flottante ou juxtaposée.
+Toutes les mises en page peuvent être appliquées dynamiquement, pour
+optimiser l&#8217;environnement pour l&#8217;application utilisée et la tâche en cours d&#8217;exécution.</simpara>
+<simpara>Avec la mise en page juxtaposée, les fenêtres sont gérées avec une zone
+maître et une zone d&#8217;empilage.
+La zone maître contient les fenêtres qui nécessitent le plus d&#8217;attention, tandis que la zone d&#8217;empilage contient toutes les autres fenêtres.
+Avec la mise en page flottante, les fenêtres peuvent être redimensionnées et déplacées à la demande. Les fenêtres de dialogue sont toujours gérées d&#8217;une manière flottante, quelle que soit la mise en page en cours.
+Les mises en forme spirale ou décroissante sont des modes spéciaux de mise en forme juxtaposée, où la zone d&#8217;empilage est présentée en spirale pour la première, ou comme une fractale rectangulaire pour la seconde.</simpara>
+<simpara>Dans awesome les fenêtres sont groupées en onglets.
+Chaque fenêtre peut être affectée à  un ou plusieurs onglets.
+En sélectionnant plusieurs onglets on peut afficher toutes les fenêtres
+affectées à ces onglets.</simpara>
+<simpara><emphasis role="strong">awesome</emphasis> peut contenir des petites boîtes graphiques qui peuvent afficher tout ce que vous désirez : tous les onglets disponibles, la mise en page courante, le titre des fenêtres visibles, du texte, etc.</simpara>
+</refsect1>
+<refsect1 id="_options">
+<title>OPTIONS</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">-v</emphasis>, <emphasis role="strong">--version</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche la version de awesome sur la sortie standard.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-h</emphasis>, <emphasis role="strong">--help</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche l&#8217;aide.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-c</emphasis>, <emphasis role="strong">--config</emphasis> <emphasis>FILE</emphasis>
+</term>
+<listitem>
+<simpara>
+    Définit un autre fichier de configuration à la place de
+<emphasis>$XDG_CONFIG_HOME/awesome/rc.lua</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-k</emphasis>, <emphasis role="strong">--check</emphasis>
+</term>
+<listitem>
+<simpara>
+    Vérifie la syntaxe du fichier de configuration.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-a</emphasis>, <emphasis role="strong">--no-argb</emphasis>
+</term>
+<listitem>
+<simpara>
+    N&#8217;utilise pas le codage ARGB.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+<refsect1 id="_associations_avec_la_souris_par_défaut">
+<title>ASSOCIATIONS AVEC LA SOURIS (PAR DÉFAUT)</title>
+<refsect2 id="_navigation">
+<title>Navigation</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Bouton1</emphasis> sur le nom de l&#8217;onglet
+</term>
+<listitem>
+<simpara>
+    Affiche le contenu de l&#8217;onglet.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Bouton4</emphasis>, <emphasis role="strong">Bouton5</emphasis> sur le nom de l&#8217;onglet
+</term>
+<listitem>
+<simpara>
+    Affiche le contenu de l&#8217;onglet précédent ou suivant.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Bouton4</emphasis>, <emphasis role="strong">Bouton5</emphasis> sur un onglet vide
+</term>
+<listitem>
+<simpara>
+    Affiche le contenu de l&#8217;onglet précédent ou suivant.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Bouton1</emphasis>, <emphasis role="strong">Bouton3</emphasis>, <emphasis role="strong">Bouton4</emphasis>, <emphasis role="strong">Bouton5</emphasis> sur le symbole de mise en page
+</term>
+<listitem>
+<simpara>
+    Affiche la mise en page précédente ou suivante.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_changement_dans_la_mise_en_page">
+<title>Changement dans la mise en page</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Bouton1</emphasis> sur le nom de l&#8217;onglet
+</term>
+<listitem>
+<simpara>
+    Déplace la fenêtre courante vers cet onglet.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Bouton3</emphasis> sur le nom de l&#8217;onglet
+</term>
+<listitem>
+<simpara>
+    Ajoute ou retire la fenêtre courante à cet onglet.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Bouton3</emphasis> sur le nom de l&#8217;onglet
+</term>
+<listitem>
+<simpara>
+    Ajoute ou retire le contenu de cet onglet à la vue courante.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Bouton1</emphasis> sur la fenêtre courante avec déplacement de la souris
+</term>
+<listitem>
+<simpara>
+    Déplace la fenêtre courante sur l'écran.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Bouton3</emphasis> sur la fenêtre courante avec déplacement de la souris
+</term>
+<listitem>
+<simpara>
+    Redimensionne la fenêtre courante sur l'écran.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+<refsect1 id="_associations_avec_les_touches_du_clavier_par_défaut">
+<title>ASSOCIATIONS AVEC LES TOUCHES DU CLAVIER (PAR DÉFAUT)</title>
+<refsect2 id="_contrôle_du_gestionnaire_de_fenêtres">
+<title>Contrôle du gestionnaire de fenêtres</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Contrôle + r</emphasis>
+</term>
+<listitem>
+<simpara>
+    Redémarre le gestionnaire de fenêtres <emphasis role="strong">awesome</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + q</emphasis>
+</term>
+<listitem>
+<simpara>
+    Quitte le gestionnaire de fenêtres <emphasis role="strong">awesome</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + r</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche une invite de ligne de commande dans la barre de statut.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + x</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche une invite de code lua dans la barre de statut.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Retour</emphasis>
+</term>
+<listitem>
+<simpara>
+    Lance un émulateur de terminal.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + w</emphasis>
+</term>
+<listitem>
+<simpara>
+    Ouvre le menu principal.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_clients">
+<title>Clients</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + m</emphasis>
+</term>
+<listitem>
+<simpara>
+    Maximise la fenêtre de l&#8217;application.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + n</emphasis>
+</term>
+<listitem>
+<simpara>
+    Minimise la fenêtre de l&#8217;application.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + n</emphasis>
+</term>
+<listitem>
+<simpara>
+    Restaure la fenêtre.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + f</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche la fenêtre de l&#8217;application en plein écran.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + c</emphasis>
+</term>
+<listitem>
+<simpara>
+    Ferme la fenêtre focalisée.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + t</emphasis>
+</term>
+<listitem>
+<simpara>
+    Met la fenêtre de l&#8217;application au premier plan.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_navigation_2">
+<title>Navigation</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Focalise sur la fenêtre suivante.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Focalise sur la fenêtre précédente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + u</emphasis>
+</term>
+<listitem>
+<simpara>
+    Focalise sur la première fenêtre urgente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Flèche Gauche</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche l&#8217;onglet précédent.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Flèche Droite</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche l&#8217;onglet suivant.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche le contenu de l&#8217;onglet 1 à 9.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Contrôle + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Focalise sur l'écran d&#8217;affichage suivant et y déplace la souris.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Contrôle + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Focalise sur l'écran d&#8217;affichage précédent et y déplace la souris.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Échappement</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche l&#8217;onglet sélectionné précédemment.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_layout_modification">
+<title>Layout modification</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Intervertit la fenêtre courante avec la suivante.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Intervertit la fenêtre courante avec la précédente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + o</emphasis>
+</term>
+<listitem>
+<simpara>
+    Déplace le client vers l'écran suivant.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Diminue la largeur de la fenêtre-maître de 5%.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Augmente la largeur de la fenêtre-maître de 5%.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Augmente de 1 le nombre de fenêtres-maître.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Diminue de 1 le nombre de fenêtres-maître.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Contrôle + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Augmente de 1 le nombre de colonnes pour les fenêtres non-maître.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Contrôle + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Diminue de 1 le nombre de colonnes pour les fenêtres non-maître.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Espace</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche la mise en page suivante.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + Espace</emphasis>
+</term>
+<listitem>
+<simpara>
+    Affiche la mise en page précédente.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Contrôle + Espace</emphasis>
+</term>
+<listitem>
+<simpara>
+    Rend la fenêtre flottante, ou fixe si elle est déjà flottante.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Contrôle + Retour</emphasis>
+</term>
+<listitem>
+<simpara>
+    Intervertit la fenêtre focalisée avec la fenêtre-maître.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Contrôle + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Ajoute ou supprime le contenu de l&#8217;onglet 1 à 9 à l&#8217;onglet courant.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Déplace la fenêtre courante dans l&#8217;onglet 1 à 9.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Majuscule + Contrôle + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Ajoute ou retire la fenêtre courante à l&#8217;onglet 1 à 9.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+<refsect1 id="_personnalisation">
+<title>PERSONNALISATION</title>
+<simpara><emphasis role="strong">awesome</emphasis> peut être personnalisé en créant un fichier spécifique
+<emphasis>$XDG_CONFIG_HOME/awesome/rc.lua</emphasis>.</simpara>
+</refsect1>
+<refsect1 id="_signaux">
+<title>SIGNAUX</title>
+<simpara><emphasis role="strong">awesome</emphasis> peut être redémarré en lui envoyant un signal SIGHUP.</simpara>
+</refsect1>
+<refsect1 id="_voir_aussi">
+<title>VOIR AUSSI</title>
+<simpara><emphasis role="strong">awesomerc</emphasis>(5) <emphasis role="strong">awesome-client</emphasis>(1)</simpara>
+</refsect1>
+<refsect1 id="_bogues">
+<title>BOGUES</title>
+<simpara>Bien sûr il n&#8217;y a aucun bogue dans <emphasis role="strong">awesome</emphasis> ! Il peut seulement y avoir
+des comportements inattendus&#8230;</simpara>
+</refsect1>
+<refsect1 id="_auteurs">
+<title>AUTEURS</title>
+<simpara>Julien Danjou &lt;<ulink url="mailto:julien@danjou.info">julien@danjou.info</ulink>&gt; et d&#8217;autres personnes.</simpara>
+</refsect1>
+<refsect1 id="_www">
+<title>WWW</title>
+<simpara><ulink url="http://awesome.naquadah.org">http://awesome.naquadah.org</ulink></simpara>
+</refsect1>
+<refsect1 id="_traduction">
+<title>TRADUCTION</title>
+<simpara>Ce document est une traduction, réalisée par Jean-Luc Duflot
+&lt;jl POING duflot CHEZ laposte POING net&gt; le 20 février 2012.</simpara>
+<simpara>L'équipe de traduction a fait le maximum pour réaliser une adaptation
+française de qualité.
+La version anglaise la plus à jour de ce document est toujours consultable via la commande : LANGUAGE=en man awesome.
+N&#8217;hésitez pas à signaler à l&#8217;auteur ou au traducteur, selon le cas, toute erreur dans cette page de manuel.</simpara>
+</refsect1>
+</refentry>

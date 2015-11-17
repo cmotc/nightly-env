@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>awesomerc(5)</title>
+</refentryinfo>
+<refmeta>
+<refentrytitle>awesomerc</refentrytitle>
+<manvolnum>5</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>awesomerc</refname>
+    <refpurpose>File di configurazione per il gestore di finestre awesome</refpurpose>
+</refnamediv>
+<refsect1 id="_sinossi">
+<title>SINOSSI</title>
+<simpara><emphasis role="strong">awesome</emphasis> cerca un file di configurazione nel seguente ordine:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+$XDG_CONFIG_HOME/awesome/rc.lua
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+$HOME/.config/awesome/rc.lua
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+XDG_CONFIG_DIRS/awesome/rc.lua
+</simpara>
+</listitem>
+</itemizedlist>
+</refsect1>
+<refsect1 id="_descrizione">
+<title>DESCRIZIONE</title>
+<simpara>Il file <emphasis role="strong">rc.lua</emphasis> contiene informazione di configurazione per <emphasis role="strong">awesome</emphasis>.
+Può essere utilizzato per configurare il comportamento e l&#8217;aspetto di
+awesome in vari modi. Può essere assimilato a un programma/script Lua
+eseguito all&#8217;avvio da <emphasis role="strong">awesome</emphasis>. Perciò, dovrebbe usare l&#8217;API Lua di
+awesome descritta nella sezione API.
+Questo file è letto all&#8217;avvio.</simpara>
+</refsect1>
+<refsect1 id="_api_lua_di_awesome">
+<title>API LUA DI AWESOME</title>
+<simpara>La documentazione per l&#8217;API Lua può essere trovata nella directory luadoc.</simpara>
+</refsect1>
+<refsect1 id="_formato_colori">
+<title>FORMATO COLORI</title>
+<simpara>Il formato dei colori in <emphasis role="strong">awesome</emphasis> è o un nome colore standard di X
+(come blue, darkblue, lightred, ecc.) o un colore in formato esadecimale
+(#rrggbb o #rrggbbaa).
+Usando il formato esadecimale, si può anche specificare un canale alpha:
+ciò significa che #00ff00 disegnerà un verde puro, ma #00ff00aa
+imposterà il canale alpha a &#8216;aa&#8217; e mescolerà il verde con il colore
+sottostante.</simpara>
+</refsect1>
+<refsect1 id="_formato_testi">
+<title>FORMATO TESTI</title>
+<simpara>Si possono usare le marcature (makup) Pango in una stringa di testo.
+Questo consente di formattare il testo generato dentro i widgets.
+La documentazione per i markup Pango può essere trovata nella
+documentazione Pango a
+<ulink url="http://library.gnome.org/devel/pango/stable/PangoMarkupFormat.html">http://library.gnome.org/devel/pango/stable/PangoMarkupFormat.html</ulink>.</simpara>
+<simpara>Un esempio di un markup Pango: &lt;span weight="bold" foreground="#336699"&gt;&#8230;&lt;/span&gt;.</simpara>
+</refsect1>
+<refsect1 id="_vedi_anche">
+<title>VEDI ANCHE</title>
+<simpara>awesome(1) awesome-client(1)</simpara>
+</refsect1>
+<refsect1 id="_autori">
+<title>AUTORI</title>
+<simpara>Scritto da Julien Danjou &lt;<ulink url="mailto:julien@danjou.info">julien@danjou.info</ulink>&gt;.</simpara>
+</refsect1>
+<refsect1 id="_www">
+<title>WWW</title>
+<simpara><ulink url="http://awesome.naquadah.org">http://awesome.naquadah.org</ulink></simpara>
+</refsect1>
+<refsect1 id="_traduzione">
+<title>TRADUZIONE</title>
+<simpara>Questa pagina di manuale è stata tradotta da Gianluca Fiore.</simpara>
+</refsect1>
+</refentry>

@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<refentry lang="en">
+<refentryinfo>
+    <title>awesome(1)</title>
+</refentryinfo>
+<refmeta>
+<refentrytitle>awesome</refentrytitle>
+<manvolnum>1</manvolnum>
+<refmiscinfo class="source">&#160;</refmiscinfo>
+<refmiscinfo class="manual">&#160;</refmiscinfo>
+</refmeta>
+<refnamediv>
+    <refname>awesome</refname>
+    <refpurpose>потрясающий оконный менеджер</refpurpose>
+</refnamediv>
+<refsect1 id="_синопсис">
+<title>СИНОПСИС</title>
+<simpara><emphasis role="strong">awesome</emphasis> [<emphasis role="strong">-v</emphasis> | <emphasis role="strong">--version</emphasis>] [<emphasis role="strong">-h</emphasis> | <emphasis role="strong">--help</emphasis>] [<emphasis role="strong">-c</emphasis> | <emphasis role="strong">--config</emphasis> <emphasis>FILE</emphasis>] [<emphasis role="strong">-k</emphasis> | <emphasis role="strong">--check</emphasis>]</simpara>
+</refsect1>
+<refsect1 id="_описание">
+<title>ОПИСАНИЕ</title>
+<simpara><emphasis role="strong">awesome</emphasis> — это оконный менеджер для X. Он управляет окнами, размещая их в
+соответствии с разными схемами (layout), такими как плавающая (floating) или
+мозаичная (tiled). Любая схема может быть применена динамически, оптимально
+подстраивая рабочую среду под текущую выполняемую задачу и приложение.</simpara>
+<simpara>В мозаичной схеме окна размещаются в двух зонах: главная и стековая. В главной
+зоне размещаются окна, которые требуют основного внимания, а в стековой — все
+остальные. В плавающей схеме окна можно свободно перемещать и изменять их
+размер. Диалоговые окна всегда отображаются в плавающем режиме, вне зависимости
+от текущей выбранной схемы. Спиральная и уменьшающая схемы являются
+исключениями: окна в стековой зоне в этих схемах размещаются по спирали для
+первой, и в виде фрактала квадратов для второй.</simpara>
+<simpara>Окна в awesome сгруппированы по тегам. Каждое окно может быть помечено одним
+или несколькими тегами. Можно выбрать один или несколько тегов, чтобы увидеть
+окна с этими тегами.</simpara>
+<simpara>В <emphasis role="strong">awesome</emphasis> можно создавать вибоксы (виджет + бокс), в которых можно отображать
+всё, что вы хотите: все имеющиеся теги, текущая выбранная схема, заголовки
+видимых окон, произвольный текст и т. д.</simpara>
+</refsect1>
+<refsect1 id="_опции">
+<title>ОПЦИИ</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">-v</emphasis>, <emphasis role="strong">--version</emphasis>
+</term>
+<listitem>
+<simpara>
+    Показать информацию о версии на стандартный вывод и выйти.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-h</emphasis>, <emphasis role="strong">--help</emphasis>
+</term>
+<listitem>
+<simpara>
+    Показать справку и выйти.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-c</emphasis>, <emphasis role="strong">--config</emphasis> <emphasis>FILE</emphasis>
+</term>
+<listitem>
+<simpara>
+    Использовать альтернативный конфигурационный файл вместо <emphasis>$XDG_CONFIG_HOME/awesome/rc.lua</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-k</emphasis>, <emphasis role="strong">--check</emphasis>
+</term>
+<listitem>
+<simpara>
+    Проверить синтаксис конфигурационного файла.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">-a</emphasis>, <emphasis role="strong">--no-argb</emphasis>
+</term>
+<listitem>
+<simpara>
+    Не использовать ARGB.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+<refsect1 id="_настройки_мыши_по_умолчанию">
+<title>НАСТРОЙКИ МЫШИ ПО-УМОЛЧАНИЮ</title>
+<refsect2 id="_навигация">
+<title>Навигация</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Button1</emphasis> на имени тега
+</term>
+<listitem>
+<simpara>
+    Выбрать тег для отображения.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Button4</emphasis>, <emphasis role="strong">Button5</emphasis> на имени тега
+</term>
+<listitem>
+<simpara>
+    Выбрать предыдущий или следующий тег.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Button4</emphasis>, <emphasis role="strong">Button5</emphasis> на корневом окне
+</term>
+<listitem>
+<simpara>
+    Выбрать предыдущий или следующий тег.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Button1</emphasis>, <emphasis role="strong">Button3</emphasis>, <emphasis role="strong">Button4</emphasis>, <emphasis role="strong">Button5</emphasis> на значке схемы
+</term>
+<listitem>
+<simpara>
+    Переключиться на предыдущую или следующую схему.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_изменение_схемы">
+<title>Изменение схемы</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Button1</emphasis> на имени тега
+</term>
+<listitem>
+<simpara>
+    Пометить текущий клиент только этим тегом.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Button3</emphasis> на имени тега
+</term>
+<listitem>
+<simpara>
+    Пометить текущий клиент этим тегом, либо убрать пометку этим тегом.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Button3</emphasis> на имени тега
+</term>
+<listitem>
+<simpara>
+    Добавить текущий тег для просмотра.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Button1</emphasis> на окне клиента
+</term>
+<listitem>
+<simpara>
+    Переместить окно.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Button3</emphasis> на окне клиента
+</term>
+<listitem>
+<simpara>
+    Изменить размер окна.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+<refsect1 id="_настройки_клавиатуры_по_умолчанию">
+<title>НАСТРОЙКИ КЛАВИАТУРЫ ПО-УМОЛЧАНИЮ</title>
+<refsect2 id="_управление_менеджером_окон">
+<title>Управление менеджером окон</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + r</emphasis>
+</term>
+<listitem>
+<simpara>
+    Перезапустить <emphasis role="strong">awesome</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + q</emphasis>
+</term>
+<listitem>
+<simpara>
+    Выйти из <emphasis role="strong">awesome</emphasis>.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + r</emphasis>
+</term>
+<listitem>
+<simpara>
+    Открыть командную строку.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + x</emphasis>
+</term>
+<listitem>
+<simpara>
+    Открыть командную строку для выполнения Lua-кода.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Return</emphasis>
+</term>
+<listitem>
+<simpara>
+    Запустить эмулятор терминала.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + w</emphasis>
+</term>
+<listitem>
+<simpara>
+    Открыть главное меню.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_клиенты">
+<title>Клиенты</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + m</emphasis>
+</term>
+<listitem>
+<simpara>
+    Развернуть на весь экран.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + n</emphasis>
+</term>
+<listitem>
+<simpara>
+    Свернуть.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + n</emphasis>
+</term>
+<listitem>
+<simpara>
+    Восстановить.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + f</emphasis>
+</term>
+<listitem>
+<simpara>
+    Полноэкранный режим.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + c</emphasis>
+</term>
+<listitem>
+<simpara>
+    Убить выбранный клиент.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + t</emphasis>
+</term>
+<listitem>
+<simpara>
+    Прикрепить поверх всех.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_навигация_2">
+<title>Навигация</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Следующий клиент.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Предыдущий клиент.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + u</emphasis>
+</term>
+<listitem>
+<simpara>
+    Первый клиент в режиме повышенного внимания (urgent).
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Left</emphasis>
+</term>
+<listitem>
+<simpara>
+    Выбрать предыдущий тег.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Right</emphasis>
+</term>
+<listitem>
+<simpara>
+    Выбрать следующий тег.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Переключиться на тег по номеру (от 1 до 9).
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Следующий экран.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Предыдущий экран.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Escape</emphasis>
+</term>
+<listitem>
+<simpara>
+    Выбрать предыдущий выбранный набор тегов.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+<refsect2 id="_изменение_схемы_2">
+<title>Изменение схемы</title>
+<variablelist>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + j</emphasis>
+</term>
+<listitem>
+<simpara>
+    Поменять текущий и следующий за ним клиенты местами.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + k</emphasis>
+</term>
+<listitem>
+<simpara>
+    Поменять текущий и предыдущий клиенты местами.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + o</emphasis>
+</term>
+<listitem>
+<simpara>
+    Отправить клиент на следующий экран.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Уменьшить главную зону на 5%.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Увеличить главную зона на 5%.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Увеличить число окон в главной зоне на 1.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Уменьшить число окон в главной зоне на 1.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + h</emphasis>
+</term>
+<listitem>
+<simpara>
+    Увеличить число колонок для стековой зоны на 1.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + l</emphasis>
+</term>
+<listitem>
+<simpara>
+    Уменьшить число колонок для стековой зоны на 1.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + space</emphasis>
+</term>
+<listitem>
+<simpara>
+    Выбрать следующую схему.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + space</emphasis>
+</term>
+<listitem>
+<simpara>
+    Выбрать предыдущую схему.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + space</emphasis>
+</term>
+<listitem>
+<simpara>
+    Переключить плавающий режим для текущего клиента.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + Return</emphasis>
+</term>
+<listitem>
+<simpara>
+    Поменять текущий и главный клиенты местами.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Control + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Включить/выключить тег по номеру.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Пометить клиента тегом по номеру.
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<emphasis role="strong">Mod4 + Shift + Control + 1-9</emphasis>
+</term>
+<listitem>
+<simpara>
+    Пометить/снять пометку клиента тегом по номеру.
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+</refsect1>
+<refsect1 id="_настройка">
+<title>НАСТРОЙКА</title>
+<simpara><emphasis role="strong">awesome</emphasis> настраивается файлом <emphasis>$XDG_CONFIG_HOME/awesome/rc.lua</emphasis> (надо создать, если его нет).</simpara>
+</refsect1>
+<refsect1 id="_сигналы">
+<title>СИГНАЛЫ</title>
+<simpara><emphasis role="strong">awesome</emphasis> может быть перезапущен сигналом SIGHUP.</simpara>
+</refsect1>
+<refsect1 id="_смотри_также">
+<title>СМОТРИ ТАКЖЕ</title>
+<simpara><emphasis role="strong">awesomerc</emphasis>(5) <emphasis role="strong">awesome-client</emphasis>(1)</simpara>
+</refsect1>
+<refsect1 id="_баги">
+<title>БАГИ</title>
+<simpara>Само собой разумеется, что в <emphasis role="strong">awesome</emphasis> багов нет. Но могут встречаться ВНЕЗАПНОСТИ.</simpara>
+</refsect1>
+<refsect1 id="_авторы">
+<title>АВТОРЫ</title>
+<simpara>Julien Danjou &lt;<ulink url="mailto:julien@danjou.info">julien@danjou.info</ulink>&gt; и другие.</simpara>
+</refsect1>
+<refsect1 id="_www">
+<title>WWW</title>
+<simpara><ulink url="http://awesome.naquadah.org">http://awesome.naquadah.org</ulink></simpara>
+</refsect1>
+<refsect1 id="_перевод">
+<title>ПЕРЕВОД</title>
+<simpara>Это руководство переведено на русский язык Константином Степановым &lt;<ulink url="mailto:kstep@p-nut.info">kstep@p-nut.info</ulink>&gt;
+13 апреля 2011 года.</simpara>
+</refsect1>
+</refentry>

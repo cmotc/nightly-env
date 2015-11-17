@@ -1,0 +1,339 @@
+'\" t
+.\"     Title: awesome
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 09/22/2015
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "AWESOME" "1" "09/22/2015" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+awesome \- gestionnaire de fen\(^etres awesome
+.SH "SYNOPSIS"
+.sp
+\fBawesome\fR [\fB\-v\fR | \fB\-\-version\fR] [\fB\-h\fR | \fB\-\-help\fR] [\fB\-c\fR | \fB\-\-config\fR \fIFILE\fR] [\fB\-k\fR | \fB\-\-check\fR]
+.SH "DESCRIPTION"
+.sp
+\fBawesome\fR est un gestionnaire de fen\(^etres pour X\&. Il g\(`ere les fen\(^etres avec diverses mises en page, par exemple flottante ou juxtapos\('ee\&. Toutes les mises en page peuvent \(^etre appliqu\('ees dynamiquement, pour optimiser l\(cqenvironnement pour l\(cqapplication utilis\('ee et la t\(^ache en cours d\(cqex\('ecution\&.
+.sp
+Avec la mise en page juxtapos\('ee, les fen\(^etres sont g\('er\('ees avec une zone ma\(^itre et une zone d\(cqempilage\&. La zone ma\(^itre contient les fen\(^etres qui n\('ecessitent le plus d\(cqattention, tandis que la zone d\(cqempilage contient toutes les autres fen\(^etres\&. Avec la mise en page flottante, les fen\(^etres peuvent \(^etre redimensionn\('ees et d\('eplac\('ees \(`a la demande\&. Les fen\(^etres de dialogue sont toujours g\('er\('ees d\(cqune mani\(`ere flottante, quelle que soit la mise en page en cours\&. Les mises en forme spirale ou d\('ecroissante sont des modes sp\('eciaux de mise en forme juxtapos\('ee, o\(`u la zone d\(cqempilage est pr\('esent\('ee en spirale pour la premi\(`ere, ou comme une fractale rectangulaire pour la seconde\&.
+.sp
+Dans awesome les fen\(^etres sont group\('ees en onglets\&. Chaque fen\(^etre peut \(^etre affect\('ee \(`a un ou plusieurs onglets\&. En s\('electionnant plusieurs onglets on peut afficher toutes les fen\(^etres affect\('ees \(`a ces onglets\&.
+.sp
+\fBawesome\fR peut contenir des petites bo\(^ites graphiques qui peuvent afficher tout ce que vous d\('esirez : tous les onglets disponibles, la mise en page courante, le titre des fen\(^etres visibles, du texte, etc\&.
+.SH "OPTIONS"
+.PP
+\fB\-v\fR, \fB\-\-version\fR
+.RS 4
+Affiche la version de awesome sur la sortie standard\&.
+.RE
+.PP
+\fB\-h\fR, \fB\-\-help\fR
+.RS 4
+Affiche l\(cqaide\&.
+.RE
+.PP
+\fB\-c\fR, \fB\-\-config\fR \fIFILE\fR
+.RS 4
+D\('efinit un autre fichier de configuration \(`a la place de
+\fI$XDG_CONFIG_HOME/awesome/rc\&.lua\fR\&.
+.RE
+.PP
+\fB\-k\fR, \fB\-\-check\fR
+.RS 4
+V\('erifie la syntaxe du fichier de configuration\&.
+.RE
+.PP
+\fB\-a\fR, \fB\-\-no\-argb\fR
+.RS 4
+N\(cqutilise pas le codage ARGB\&.
+.RE
+.SH "ASSOCIATIONS AVEC LA SOURIS (PAR D\('EFAUT)"
+.SS "Navigation"
+.PP
+\fBBouton1\fR sur le nom de l\(cqonglet
+.RS 4
+Affiche le contenu de l\(cqonglet\&.
+.RE
+.PP
+\fBBouton4\fR, \fBBouton5\fR sur le nom de l\(cqonglet
+.RS 4
+Affiche le contenu de l\(cqonglet pr\('ec\('edent ou suivant\&.
+.RE
+.PP
+\fBBouton4\fR, \fBBouton5\fR sur un onglet vide
+.RS 4
+Affiche le contenu de l\(cqonglet pr\('ec\('edent ou suivant\&.
+.RE
+.PP
+\fBBouton1\fR, \fBBouton3\fR, \fBBouton4\fR, \fBBouton5\fR sur le symbole de mise en page
+.RS 4
+Affiche la mise en page pr\('ec\('edente ou suivante\&.
+.RE
+.SS "Changement dans la mise en page"
+.PP
+\fBMod4 + Bouton1\fR sur le nom de l\(cqonglet
+.RS 4
+D\('eplace la fen\(^etre courante vers cet onglet\&.
+.RE
+.PP
+\fBMod4 + Bouton3\fR sur le nom de l\(cqonglet
+.RS 4
+Ajoute ou retire la fen\(^etre courante \(`a cet onglet\&.
+.RE
+.PP
+\fBBouton3\fR sur le nom de l\(cqonglet
+.RS 4
+Ajoute ou retire le contenu de cet onglet \(`a la vue courante\&.
+.RE
+.PP
+\fBMod4 + Bouton1\fR sur la fen\(^etre courante avec d\('eplacement de la souris
+.RS 4
+D\('eplace la fen\(^etre courante sur l\*(Aq\('ecran\&.
+.RE
+.PP
+\fBMod4 + Bouton3\fR sur la fen\(^etre courante avec d\('eplacement de la souris
+.RS 4
+Redimensionne la fen\(^etre courante sur l\*(Aq\('ecran\&.
+.RE
+.SH "ASSOCIATIONS AVEC LES TOUCHES DU CLAVIER (PAR D\('EFAUT)"
+.SS "Contr\(^ole du gestionnaire de fen\(^etres"
+.PP
+\fBMod4 + Contr\(^ole + r\fR
+.RS 4
+Red\('emarre le gestionnaire de fen\(^etres
+\fBawesome\fR\&.
+.RE
+.PP
+\fBMod4 + Majuscule + q\fR
+.RS 4
+Quitte le gestionnaire de fen\(^etres
+\fBawesome\fR\&.
+.RE
+.PP
+\fBMod4 + r\fR
+.RS 4
+Affiche une invite de ligne de commande dans la barre de statut\&.
+.RE
+.PP
+\fBMod4 + x\fR
+.RS 4
+Affiche une invite de code lua dans la barre de statut\&.
+.RE
+.PP
+\fBMod4 + Retour\fR
+.RS 4
+Lance un \('emulateur de terminal\&.
+.RE
+.PP
+\fBMod4 + w\fR
+.RS 4
+Ouvre le menu principal\&.
+.RE
+.SS "Clients"
+.PP
+\fBMod4 + m\fR
+.RS 4
+Maximise la fen\(^etre de l\(cqapplication\&.
+.RE
+.PP
+\fBMod4 + n\fR
+.RS 4
+Minimise la fen\(^etre de l\(cqapplication\&.
+.RE
+.PP
+\fBMod4 + Control + n\fR
+.RS 4
+Restaure la fen\(^etre\&.
+.RE
+.PP
+\fBMod4 + f\fR
+.RS 4
+Affiche la fen\(^etre de l\(cqapplication en plein \('ecran\&.
+.RE
+.PP
+\fBMod4 + Majuscule + c\fR
+.RS 4
+Ferme la fen\(^etre focalis\('ee\&.
+.RE
+.PP
+\fBMod4 + t\fR
+.RS 4
+Met la fen\(^etre de l\(cqapplication au premier plan\&.
+.RE
+.SS "Navigation"
+.PP
+\fBMod4 + j\fR
+.RS 4
+Focalise sur la fen\(^etre suivante\&.
+.RE
+.PP
+\fBMod4 + k\fR
+.RS 4
+Focalise sur la fen\(^etre pr\('ec\('edente\&.
+.RE
+.PP
+\fBMod4 + u\fR
+.RS 4
+Focalise sur la premi\(`ere fen\(^etre urgente\&.
+.RE
+.PP
+\fBMod4 + Fl\(`eche Gauche\fR
+.RS 4
+Affiche l\(cqonglet pr\('ec\('edent\&.
+.RE
+.PP
+\fBMod4 + Fl\(`eche Droite\fR
+.RS 4
+Affiche l\(cqonglet suivant\&.
+.RE
+.PP
+\fBMod4 + 1\-9\fR
+.RS 4
+Affiche le contenu de l\(cqonglet 1 \(`a 9\&.
+.RE
+.PP
+\fBMod4 + Contr\(^ole + j\fR
+.RS 4
+Focalise sur l\*(Aq\('ecran d\(cqaffichage suivant et y d\('eplace la souris\&.
+.RE
+.PP
+\fBMod4 + Contr\(^ole + k\fR
+.RS 4
+Focalise sur l\*(Aq\('ecran d\(cqaffichage pr\('ec\('edent et y d\('eplace la souris\&.
+.RE
+.PP
+\fBMod4 + \('Echappement\fR
+.RS 4
+Affiche l\(cqonglet s\('electionn\('e pr\('ec\('edemment\&.
+.RE
+.SS "Layout modification"
+.PP
+\fBMod4 + Majuscule + j\fR
+.RS 4
+Intervertit la fen\(^etre courante avec la suivante\&.
+.RE
+.PP
+\fBMod4 + Majuscule + k\fR
+.RS 4
+Intervertit la fen\(^etre courante avec la pr\('ec\('edente\&.
+.RE
+.PP
+\fBMod4 + o\fR
+.RS 4
+D\('eplace le client vers l\*(Aq\('ecran suivant\&.
+.RE
+.PP
+\fBMod4 + h\fR
+.RS 4
+Diminue la largeur de la fen\(^etre\-ma\(^itre de 5%\&.
+.RE
+.PP
+\fBMod4 + l\fR
+.RS 4
+Augmente la largeur de la fen\(^etre\-ma\(^itre de 5%\&.
+.RE
+.PP
+\fBMod4 + Majuscule + h\fR
+.RS 4
+Augmente de 1 le nombre de fen\(^etres\-ma\(^itre\&.
+.RE
+.PP
+\fBMod4 + Majuscule + l\fR
+.RS 4
+Diminue de 1 le nombre de fen\(^etres\-ma\(^itre\&.
+.RE
+.PP
+\fBMod4 + Contr\(^ole + h\fR
+.RS 4
+Augmente de 1 le nombre de colonnes pour les fen\(^etres non\-ma\(^itre\&.
+.RE
+.PP
+\fBMod4 + Contr\(^ole + l\fR
+.RS 4
+Diminue de 1 le nombre de colonnes pour les fen\(^etres non\-ma\(^itre\&.
+.RE
+.PP
+\fBMod4 + Espace\fR
+.RS 4
+Affiche la mise en page suivante\&.
+.RE
+.PP
+\fBMod4 + Majuscule + Espace\fR
+.RS 4
+Affiche la mise en page pr\('ec\('edente\&.
+.RE
+.PP
+\fBMod4 + Contr\(^ole + Espace\fR
+.RS 4
+Rend la fen\(^etre flottante, ou fixe si elle est d\('ej\(`a flottante\&.
+.RE
+.PP
+\fBMod4 + Contr\(^ole + Retour\fR
+.RS 4
+Intervertit la fen\(^etre focalis\('ee avec la fen\(^etre\-ma\(^itre\&.
+.RE
+.PP
+\fBMod4 + Contr\(^ole + 1\-9\fR
+.RS 4
+Ajoute ou supprime le contenu de l\(cqonglet 1 \(`a 9 \(`a l\(cqonglet courant\&.
+.RE
+.PP
+\fBMod4 + Majuscule + 1\-9\fR
+.RS 4
+D\('eplace la fen\(^etre courante dans l\(cqonglet 1 \(`a 9\&.
+.RE
+.PP
+\fBMod4 + Majuscule + Contr\(^ole + 1\-9\fR
+.RS 4
+Ajoute ou retire la fen\(^etre courante \(`a l\(cqonglet 1 \(`a 9\&.
+.RE
+.SH "PERSONNALISATION"
+.sp
+\fBawesome\fR peut \(^etre personnalis\('e en cr\('eant un fichier sp\('ecifique \fI$XDG_CONFIG_HOME/awesome/rc\&.lua\fR\&.
+.SH "SIGNAUX"
+.sp
+\fBawesome\fR peut \(^etre red\('emarr\('e en lui envoyant un signal SIGHUP\&.
+.SH "VOIR AUSSI"
+.sp
+\fBawesomerc\fR(5) \fBawesome\-client\fR(1)
+.SH "BOGUES"
+.sp
+Bien s\(^ur il n\(cqy a aucun bogue dans \fBawesome\fR ! Il peut seulement y avoir des comportements inattendus\&...
+.SH "AUTEURS"
+.sp
+Julien Danjou <\m[blue]\fBjulien@danjou\&.info\fR\m[]\&\s-2\u[1]\d\s+2> et d\(cqautres personnes\&.
+.SH "WWW"
+.sp
+\m[blue]\fBhttp://awesome\&.naquadah\&.org\fR\m[]
+.SH "TRADUCTION"
+.sp
+Ce document est une traduction, r\('ealis\('ee par Jean\-Luc Duflot <jl POING duflot CHEZ laposte POING net> le 20 f\('evrier 2012\&.
+.sp
+L\*(Aq\('equipe de traduction a fait le maximum pour r\('ealiser une adaptation fran\(,caise de qualit\('e\&. La version anglaise la plus \(`a jour de ce document est toujours consultable via la commande : LANGUAGE=en man awesome\&. N\(cqh\('esitez pas \(`a signaler \(`a l\(cqauteur ou au traducteur, selon le cas, toute erreur dans cette page de manuel\&.
+.SH "NOTES"
+.IP " 1." 4
+julien@danjou.info
+.RS 4
+\%mailto:julien@danjou.info
+.RE

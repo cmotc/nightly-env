@@ -1,0 +1,96 @@
+'\" t
+.\"     Title: awesomerc
+.\"    Author: [see the "AUTHORS" section]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 09/22/2015
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "AWESOMERC" "5" "09/22/2015" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+awesomerc \- Configuration file for the awesome window manager
+.SH "SYNOPSIS"
+.sp
+\fBawesome\fR looks for a configuration file in this order:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+$XDG_CONFIG_HOME/awesome/rc\&.lua
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+$HOME/\&.config/awesome/rc\&.lua
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+XDG_CONFIG_DIRS/awesome/rc\&.lua
+.RE
+.SH "DESCRIPTION"
+.sp
+The \fBrc\&.lua\fR file contains configuration information for \fBawesome\fR\&. It can be used to configure the behavior and look of awesome in a variety of ways\&. It can be assimilated as a Lua program/script run at startup by \fBawesome\fR\&. Therefore, it should use the awesome Lua API described in the API section\&. This file is read at startup\&.
+.SH "AWESOME LUA API"
+.sp
+Documentation for the Lua API can be found in the luadoc directory\&.
+.SH "COLORS FORMAT"
+.sp
+The color format in \fBawesome\fR is either a standard X color name (blue, darkblue, lightred, etc) or a hexadecimal formatted color (#rrggbb or #rrggbbaa)\&. By using the hexadecimal format, you can also specify an alpha channel: that means that #00ff00 will draw pure green, but #00ff00aa will set the alpha channel to \(oqaa\(cq and will blend the green with the color under it\&.
+.SH "TEXT FORMAT"
+.sp
+You can use Pango markup in a text string\&. This allows formating the text rendered inside widgets\&. Pango markup documentation can be found in the Pango documentation at \m[blue]\fBhttp://library\&.gnome\&.org/devel/pango/stable/PangoMarkupFormat\&.html\fR\m[]\&.
+.sp
+A Pango markup example: <span weight="bold" foreground="#336699">\&...</span>\&.
+.SH "SEE ALSO"
+.sp
+awesome(1) awesome\-client(1)
+.SH "AUTHORS"
+.sp
+Written by Julien Danjou <\m[blue]\fBjulien@danjou\&.info\fR\m[]\&\s-2\u[1]\d\s+2>\&.
+.SH "WWW"
+.sp
+\m[blue]\fBhttp://awesome\&.naquadah\&.org\fR\m[]
+.SH "NOTES"
+.IP " 1." 4
+julien@danjou.info
+.RS 4
+\%mailto:julien@danjou.info
+.RE
