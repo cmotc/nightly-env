@@ -7,6 +7,7 @@ clean(){
 
 build(){
 	clean
+        alias dh_make="dh_make --quiet"
 	for SCRIPT in ./.makescripts/*
 	do
 		if [ -f $SCRIPT -a -x $SCRIPT ]
