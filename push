@@ -1,7 +1,0 @@
-#! /bin/sh
-rm -rf ../repository/packages/
-mkdir -p ../repository/packages/
-cp *.build *.changes *.tar.xz *.dsc *.deb ../repository/packages/
-cd ../repository/
-rm -rf debian
-./apt-git --check
