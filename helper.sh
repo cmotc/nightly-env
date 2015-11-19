@@ -3,7 +3,7 @@
 USE_DEBSH_SCRIPTS="Y"
 USE_RPMSH_SCRIPTS="Y"
 
-if [ $1 == "no-scripts" ]; then
+if [ "$1" == "no-scripts" ]; then
 	USE_DEBSH_SCRIPTS="N"
 	USE_RPMSH_SCRIPTS="N"
 fi
@@ -32,7 +32,7 @@ build(){
 	alias dh_make="dh_make --yes"
 	for d in *; do
 		if [ -f "$d/debian.sh" ]; then
-			if [$USE_DEBSH_SCRIPTS="Y"]; then
+			if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
 				. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
 			fi
 		else
@@ -44,7 +44,7 @@ build(){
 			fi
 		fi
 		if [ -f "$d/rpm.sh" ]; then
-			if [ $USE_RPMSH_SCRIPTS == "y" ]; then
+			if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
 				. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME
 			fi
 		fi
