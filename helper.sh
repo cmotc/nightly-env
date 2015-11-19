@@ -7,10 +7,12 @@ clean(){
 
 build(){
 	clean
-        alias dh_make="dh_make --quiet"
-	for d in .; do
-		. "./$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>"
-		rm -rf $DEBFOLDERNAME
+        alias dh_make="dh_make --yes"
+	for d in *; do
+		if [ -f "$d/debian.sh" ]; then
+#			echo $d
+			. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+		fi
         done
 #	for SCRIPT in ./.makescripts/*
 #	do
