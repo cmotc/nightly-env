@@ -8,13 +8,17 @@ clean(){
 build(){
 	clean
         alias dh_make="dh_make --quiet"
-	for SCRIPT in ./.makescripts/*
-	do
-		if [ -f $SCRIPT -a -x $SCRIPT ]
-		then
-			$SCRIPT
-		fi
-	done
+	for d in ./ do
+		. ./$d/debian.sh && echo "<<<Built $DEBFOLDERNAME>>>"
+		rm -rf $DEBFOLDERNAME
+        done
+#	for SCRIPT in ./.makescripts/*
+#	do
+#		if [ -f $SCRIPT -a -x $SCRIPT ]
+#		then
+#			$SCRIPT
+#		fi
+#	done
 	if [ "$1" = "upload" ] ; then
 		upload
 	fi
