@@ -1,5 +1,13 @@
 #! /bin/sh
 
+USE_DEBSH_SCRIPTS="Y"
+USE_RPMSH_SCRIPTS="Y"
+
+if [ $1 == "no-scripts"]; then
+	USE_DEBSH_SCRIPTS="N"
+	USE_RPMSH_SCRIPTS="N"
+fi
+
 #clean up everything but unfinished folders
 clean(){
 	rm *.build *.dsc *.tar.xz *.deb *.*.tar.xz *.changes
@@ -24,10 +32,19 @@ build(){
 	alias dh_make="dh_make --yes"
 	for d in *; do
 		if [ -f "$d/debian.sh" ]; then
-			. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+			if [$USE_DEBSH_SCRIPTS="Y"]; then
+				. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+			fi
+		else
+			echo "$d/debian.sh file not found. Attempting to build package automatically."
+			DEBFOLDERNAME=$d-$(date +%Y%m%d)
+			cp -Rv $d $DEBFOLDERNAME
+			cd $DEBFOLDERNAME && debuild -us -uc >> ../log
 		fi
 		if [ -f "$d/rpm.sh" ]; then
-			. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME
+			if [ $USE_RPMSH_SCRIPTS == "y" ]; then
+				. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME
+			fi
 		fi
 	done
 	if [ "$1" = "upload" ] ; then
@@ -58,14 +75,18 @@ genclone(){
 		remote=$(git remote -v)
 		for word in $remote; do
 			if [ `echo "$word" | grep 'git@' ` ]; then
-				echo "git clone $word" >> ../.clone
+				echo "git clone $word" >> ../clone-$(date +%Y%m%d)
 			fi
 		done
 		cd -
 	done
-	awk '!seen[$0]++' ./.clone > ./clone
-	rm ./.clone
-	chmod a+x ./clone
+	awk '!seen[$0]++' ./clone-$(date +%Y%m%d) > ./.clone
+	rm ./clone-$(date +%Y%m%d)
+	chmod a+x ./.clone
+}
+
+clone(){
+	chmod a+x ./.clone
 }
 
 #generate a repository.
