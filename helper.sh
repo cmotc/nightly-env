@@ -3,7 +3,7 @@
 USE_DEBSH_SCRIPTS="Y"
 USE_RPMSH_SCRIPTS="Y"
 
-if [ $1 == "no-scripts"]; then
+if [ $1 == "no-scripts" ]; then
 	USE_DEBSH_SCRIPTS="N"
 	USE_RPMSH_SCRIPTS="N"
 fi
@@ -36,10 +36,12 @@ build(){
 				. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
 			fi
 		else
-			echo "$d/debian.sh file not found. Attempting to build package automatically."
-			DEBFOLDERNAME=$d-$(date +%Y%m%d)
-			cp -Rv $d $DEBFOLDERNAME
-			cd $DEBFOLDERNAME && debuild -us -uc >> ../log
+			if [ -d "$d/debian" ]; then
+				echo "$d/debian.sh file not found. Attempting to build package automatically."
+				DEBFOLDERNAME=$d-$(date +%Y%m%d)
+				cp -Rv $d $DEBFOLDERNAME
+				cd $DEBFOLDERNAME && debuild -us -uc >> ../log &&	cd ..
+			fi
 		fi
 		if [ -f "$d/rpm.sh" ]; then
 			if [ $USE_RPMSH_SCRIPTS == "y" ]; then
