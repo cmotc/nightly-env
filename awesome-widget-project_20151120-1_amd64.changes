@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 20 Nov 2015 02:55:09 -0500
+Source: awesome-widget-project
+Binary: awesome-widget-project
+Architecture: source all
+Version: 20151120-1
+Distribution: unstable
+Urgency: low
+Maintainer: cmotc <cmotc@openmailbox.org>
+Changed-By: dyngar <dyngar@dyngar.local>
+Description:
+ awesome-widget-project - A modified version of the debian rc.lua which starts conky, and
+Changes:
+ awesome-widget-project (20151120-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 75b08a5f9f92553ecb942006e60cdeb2c59091a2 977 awesome-widget-project_20151120-1.dsc
+ 069a80dd8283d7050286814d4248407c7000ec0a 27188 awesome-widget-project_20151120.orig.tar.xz
+ 23bfe440b0549e469b6d70b77f89070ef32c0bbb 2332 awesome-widget-project_20151120-1.debian.tar.xz
+ 1c9926f3e2cfc230b939317e44372fc0d7872808 8014 awesome-widget-project_20151120-1_all.deb
+Checksums-Sha256:
+ 449dcba1f6bc8787a79c6063def9e2cb300ad5678abbd37129a78b25138d914e 977 awesome-widget-project_20151120-1.dsc
+ 5edb3a6d1d90101d147789be989e72846a48613d41c5c8f06c6cc6fb2e99fceb 27188 awesome-widget-project_20151120.orig.tar.xz
+ 094542b52b1b84b309959d2f818f75782e1148f56def357bbdd43eb2baf69d17 2332 awesome-widget-project_20151120-1.debian.tar.xz
+ 4c847b113229808ebdd69a9dbdc2f74367402b4e55f27cc67a149e6b5074941a 8014 awesome-widget-project_20151120-1_all.deb
+Files:
+ f7977444bb8eefd0a34129852e5e1bc9 977 unknown optional awesome-widget-project_20151120-1.dsc
+ ce0595bd1e2035a82f309d54b991791d 27188 unknown optional awesome-widget-project_20151120.orig.tar.xz
+ 87ef8f4c4c84e4aafa53ca3385728278 2332 unknown optional awesome-widget-project_20151120-1.debian.tar.xz
+ 986588f9ed4f1f1a6b3bc4b5a9de1a30 8014 unknown optional awesome-widget-project_20151120-1_all.deb
