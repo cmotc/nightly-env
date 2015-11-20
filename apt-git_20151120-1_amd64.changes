@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Fri, 20 Nov 2015 06:06:00 -0500
+Date: Fri, 20 Nov 2015 06:36:23 -0500
 Source: apt-git
 Binary: apt-git
 Architecture: source all
@@ -15,17 +15,17 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1: 
- dd8e294d8c84af0aee083c619bcb487522f81425 825 apt-git_20151120-1.dsc
- 93b2f44f69b101c18efaeada9ef96c6bca6fcad5 2044 apt-git_20151120.orig.tar.xz
- 74f9b3662f13c7a88501a2b57dc093f6a945a77e 2047 apt-git_20151120-1.debian.tar.gz
- c25724287fafcd425b4bbe6f66242ce7d34e8915 3974 apt-git_20151120-1_all.deb
+ af0973b0e7b6e504f1217e8e245495b45640234b 825 apt-git_20151120-1.dsc
+ c1bd9d7c935367c33a76d794bdd3e07a5b1bbbba 2044 apt-git_20151120.orig.tar.xz
+ bbcfe6a70209cb04dfe952146f53e7b84157a39a 2048 apt-git_20151120-1.debian.tar.gz
+ abdbb9cf5cac599f700a5ea91f21eff762c983e5 3974 apt-git_20151120-1_all.deb
 Checksums-Sha256: 
- 652ec98b783fda4d3e86a1df0e2055bdd74221a01f0985731d91efbec99f770c 825 apt-git_20151120-1.dsc
- 23c620470dc69d36d659adf50491417c3a6933697e36ea145a5c8f19aa06ff5a 2044 apt-git_20151120.orig.tar.xz
- 4ae0f2bcf221274cf80735ea7171ea4bb607fc43e32bee040e50490900b987ab 2047 apt-git_20151120-1.debian.tar.gz
- 452289f5510c042bc8f5f1689ffb10c80ee22e7bc67c3b15bcfe42bf085a95a3 3974 apt-git_20151120-1_all.deb
+ d6bdad2b72b0de987154abc2c337285c437602fc96096605789df4f066484dfd 825 apt-git_20151120-1.dsc
+ ab1e5cbcbd3165d649ba53ffe284f1d70a5044f22463d58c3569af1a58e717e1 2044 apt-git_20151120.orig.tar.xz
+ 64b41115821a6eff4ca32f28f18d09f21738ba8e752893f7be40478e53d0d77c 2048 apt-git_20151120-1.debian.tar.gz
+ 81e548e975cfab6b53025d48eb9d066afac8be280d0bc4554078ac22e81ca6a1 3974 apt-git_20151120-1_all.deb
 Files: 
- 72fb5ffa9dcdb2698461a26ab6203c87 825 unknown optional apt-git_20151120-1.dsc
- 4968111a5096a5079d4b863a09c242f5 2044 unknown optional apt-git_20151120.orig.tar.xz
- 251ee4e533454555ff6837b2f5df6a2f 2047 unknown optional apt-git_20151120-1.debian.tar.gz
- 715c77fed8c847d2011f20ccb415715f 3974 unknown optional apt-git_20151120-1_all.deb
+ 8221c095ddcf5a7e6303252231e17374 825 unknown optional apt-git_20151120-1.dsc
+ 542671a4a2c64735d8fbd8c524a40fbf 2044 unknown optional apt-git_20151120.orig.tar.xz
+ a41aec6715d8e6980603f347b3b99cd1 2048 unknown optional apt-git_20151120-1.debian.tar.gz
+ 23f04353803891fb9c096aa4f5f39029 3974 unknown optional apt-git_20151120-1_all.deb

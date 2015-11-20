@@ -10,11 +10,11 @@ Build-Depends: debhelper (>= 9)
 Package-List: 
  awesome-conky-starter deb unknown optional
 Checksums-Sha1: 
- a30cf5508f95a074ef7db9fd087df02d6e7f6fc4 26524 awesome-conky-starter_20151120.orig.tar.xz
- 96d7d4ef4782dea5c3393fc4ec7368519a14e3b8 1954 awesome-conky-starter_20151120-1.debian.tar.gz
+ 75683113b337a179707075d58a9d515b169f803f 26520 awesome-conky-starter_20151120.orig.tar.xz
+ 3e6ead8b6e2ff6f27b594a75fca83185c519c487 1959 awesome-conky-starter_20151120-1.debian.tar.gz
 Checksums-Sha256: 
- b94614a5a5ad7603b399a4f254517177a0d155a606131b0b24b2749777ce7fd4 26524 awesome-conky-starter_20151120.orig.tar.xz
- 84c1a6eb1408a855a41da360a2ad05c7b87ad4e3183d2a9ce4740fcbbf02dc9d 1954 awesome-conky-starter_20151120-1.debian.tar.gz
+ ff8b4bb1e52eb99b33a1f82701d3f6a4f05d6cfd69093764afd403457f3c0394 26520 awesome-conky-starter_20151120.orig.tar.xz
+ a8d26e7a74e8a1de440090e4a3cddd00c8f48a377960220e09312409bc3563e5 1959 awesome-conky-starter_20151120-1.debian.tar.gz
 Files: 
- b212e9fc9b2ff68d2966c2807a1ae77b 26524 awesome-conky-starter_20151120.orig.tar.xz
- 753a4623c5ab6b81906725ceb06abe13 1954 awesome-conky-starter_20151120-1.debian.tar.gz
+ eb5564dcb5673148077569f3148eb9aa 26520 awesome-conky-starter_20151120.orig.tar.xz
+ b1856df72c488efec972f328ab971d42 1959 awesome-conky-starter_20151120-1.debian.tar.gz

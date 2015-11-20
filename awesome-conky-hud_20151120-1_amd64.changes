@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Fri, 20 Nov 2015 06:06:04 -0500
+Date: Fri, 20 Nov 2015 06:36:36 -0500
 Source: awesome-conky-hud
 Binary: awesome-conky-hud
 Architecture: source all
@@ -15,17 +15,17 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1: 
- e6b1abeedda6f76cc67e5310b22cd0182b80f865 922 awesome-conky-hud_20151120-1.dsc
- 8d190e81f84b9afc1ae772e989d3c78307fb962b 28916 awesome-conky-hud_20151120.orig.tar.xz
- a56ed8b30b62a744bf0ef84ff7595700d05427a9 1964 awesome-conky-hud_20151120-1.debian.tar.gz
- 3e7941b9518cd1da748d8f6d57659cb44d698a17 6914 awesome-conky-hud_20151120-1_all.deb
+ 56c79e99817e8cc25ae459357088a3ef0d38bb12 922 awesome-conky-hud_20151120-1.dsc
+ 02373808e8f181523154d25f12b22e39c2585eeb 28924 awesome-conky-hud_20151120.orig.tar.xz
+ c30a6f448f852a1ea73b02d6e43b9361a1f447d8 1981 awesome-conky-hud_20151120-1.debian.tar.gz
+ bbdcaed84bd66bc3314db65198817a9446d6eed0 7956 awesome-conky-hud_20151120-1_all.deb
 Checksums-Sha256: 
- ad837576d09fcde8cf87a1fc0d0735ca5576ad12a4aab8f16084893df849fe7e 922 awesome-conky-hud_20151120-1.dsc
- 51961a2ed9f26934693b3c12fea2f2857ed512de8aecd46e1e616f63323abaed 28916 awesome-conky-hud_20151120.orig.tar.xz
- b81ef1e74f8eb65a8b8ae627c99153f898d31d24d8213b4c676cd5614ad1ff45 1964 awesome-conky-hud_20151120-1.debian.tar.gz
- 849baf0b7d655a6e5b69a97dbaf8bea85bf131adf3bfb2ddea8a339f0307217a 6914 awesome-conky-hud_20151120-1_all.deb
+ b0b31e4a23d5acaeedfca2569d3de1d0387c0e012761159ba154545ce11535cc 922 awesome-conky-hud_20151120-1.dsc
+ 0497b5b5ebcc43aa4bb9a3f5aff7436a3d54d93954811407da4b506ed5786271 28924 awesome-conky-hud_20151120.orig.tar.xz
+ 0319e1fb00b827379a864c6e3f4ae843e9ca8e3df24232a923119a7ed976fd6f 1981 awesome-conky-hud_20151120-1.debian.tar.gz
+ bac8395757179ab4b63098e9c1bf6e08c8a0666755b3e6c7a75d80efd62e7c39 7956 awesome-conky-hud_20151120-1_all.deb
 Files: 
- 284f4fdc8550e14984f3e9507466ddfc 922 unknown optional awesome-conky-hud_20151120-1.dsc
- c7a845f0253037465d49e3fdb6896344 28916 unknown optional awesome-conky-hud_20151120.orig.tar.xz
- c67cf91b1c163c832df222a3d1ff8c75 1964 unknown optional awesome-conky-hud_20151120-1.debian.tar.gz
- a9718795158f413af77f4a83b1eea064 6914 unknown optional awesome-conky-hud_20151120-1_all.deb
+ 3c16d9b618945139de34e291b703c3b8 922 unknown optional awesome-conky-hud_20151120-1.dsc
+ 4a397394bb66bc467240ae71f508f6f8 28924 unknown optional awesome-conky-hud_20151120.orig.tar.xz
+ 523bfbcd69bf19ae37ca321a8d2309c9 1981 unknown optional awesome-conky-hud_20151120-1.debian.tar.gz
+ cc22089df0397c068d80abf5cafb5020 7956 unknown optional awesome-conky-hud_20151120-1_all.deb

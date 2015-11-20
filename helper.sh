@@ -37,7 +37,7 @@ build(){
 	for d in *; do
 		if [ -f "$d/debian.sh" ]; then
 			if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-				. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+				. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME 
                                 cd ..
 			fi
 		else
@@ -45,14 +45,14 @@ build(){
 				echo "$d/debian.sh file not found. Attempting to build package automatically."
 				DEBFOLDERNAME=$d-$(date +%Y%m%d)
 				cp -Rv $d $DEBFOLDERNAME
-				cd $DEBFOLDERNAME && debuild -us -uc >> ../log
-				cd ..
+                                t="false"
+				cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
+                                if [ "$t"="true" ]; then cd .. ; fi
 			fi
 		fi
 		if [ -f "$d/rpm.sh" ]; then
 			if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
-				. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME
-                                cd ..
+				. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
 			fi
 		fi
 	done
