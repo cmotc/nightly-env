@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 20 Nov 2015 06:06:07 -0500
+Source: awesome-conky-starter
+Binary: awesome-conky-starter
+Architecture: source all
+Version: 20151120-1
+Distribution: unstable
+Urgency: low
+Maintainer: cmotc <cmotc@openmailbox.org>
+Changed-By: helper <helper@unknown>
+Description: 
+ awesome-conky-starter - A modified version of the debian rc.lua which starts conky, and
+Changes: 
+ awesome-conky-starter (20151120-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1: 
+ bee734aa1b9c5a71adec879f62d39429ec2d62df 962 awesome-conky-starter_20151120-1.dsc
+ a30cf5508f95a074ef7db9fd087df02d6e7f6fc4 26524 awesome-conky-starter_20151120.orig.tar.xz
+ 96d7d4ef4782dea5c3393fc4ec7368519a14e3b8 1954 awesome-conky-starter_20151120-1.debian.tar.gz
+ 28e1a4866e5d066bcca7c2be7a4528d975782294 6630 awesome-conky-starter_20151120-1_all.deb
+Checksums-Sha256: 
+ 8ab90760d34f57a6f4a997cda959bf5c9879afd3590c79f6169a052f1ba65604 962 awesome-conky-starter_20151120-1.dsc
+ b94614a5a5ad7603b399a4f254517177a0d155a606131b0b24b2749777ce7fd4 26524 awesome-conky-starter_20151120.orig.tar.xz
+ 84c1a6eb1408a855a41da360a2ad05c7b87ad4e3183d2a9ce4740fcbbf02dc9d 1954 awesome-conky-starter_20151120-1.debian.tar.gz
+ 487a48c36143e2df5d0f378fe8ad5d27a7e03da6bc7594023e55c5447089b0c0 6630 awesome-conky-starter_20151120-1_all.deb
+Files: 
+ 14fd70edffdb8a2661a565c7ec8f4c94 962 unknown optional awesome-conky-starter_20151120-1.dsc
+ b212e9fc9b2ff68d2966c2807a1ae77b 26524 unknown optional awesome-conky-starter_20151120.orig.tar.xz
+ 753a4623c5ab6b81906725ceb06abe13 1954 unknown optional awesome-conky-starter_20151120-1.debian.tar.gz
+ 30aec12bd57446fae1e229bd6c086f7b 6630 unknown optional awesome-conky-starter_20151120-1_all.deb

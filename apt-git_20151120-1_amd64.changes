@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 20 Nov 2015 06:06:00 -0500
+Source: apt-git
+Binary: apt-git
+Architecture: source all
+Version: 20151120-1
+Distribution: unstable
+Urgency: low
+Maintainer: helper <helper@unknown>
+Changed-By: helper <helper@unknown>
+Description: 
+ apt-git    - <insert up to 60 chars description>
+Changes: 
+ apt-git (20151120-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1: 
+ dd8e294d8c84af0aee083c619bcb487522f81425 825 apt-git_20151120-1.dsc
+ 93b2f44f69b101c18efaeada9ef96c6bca6fcad5 2044 apt-git_20151120.orig.tar.xz
+ 74f9b3662f13c7a88501a2b57dc093f6a945a77e 2047 apt-git_20151120-1.debian.tar.gz
+ c25724287fafcd425b4bbe6f66242ce7d34e8915 3974 apt-git_20151120-1_all.deb
+Checksums-Sha256: 
+ 652ec98b783fda4d3e86a1df0e2055bdd74221a01f0985731d91efbec99f770c 825 apt-git_20151120-1.dsc
+ 23c620470dc69d36d659adf50491417c3a6933697e36ea145a5c8f19aa06ff5a 2044 apt-git_20151120.orig.tar.xz
+ 4ae0f2bcf221274cf80735ea7171ea4bb607fc43e32bee040e50490900b987ab 2047 apt-git_20151120-1.debian.tar.gz
+ 452289f5510c042bc8f5f1689ffb10c80ee22e7bc67c3b15bcfe42bf085a95a3 3974 apt-git_20151120-1_all.deb
+Files: 
+ 72fb5ffa9dcdb2698461a26ab6203c87 825 unknown optional apt-git_20151120-1.dsc
+ 4968111a5096a5079d4b863a09c242f5 2044 unknown optional apt-git_20151120.orig.tar.xz
+ 251ee4e533454555ff6837b2f5df6a2f 2047 unknown optional apt-git_20151120-1.debian.tar.gz
+ 715c77fed8c847d2011f20ccb415715f 3974 unknown optional apt-git_20151120-1_all.deb
