@@ -14,7 +14,7 @@ echo "Loading build helper scripts in $WORKDIR"
 
 #clean up everything but unfinished folders
 clean(){
-	rm *.build *.dsc *.tar.xz *.deb *.*.tar.xz *.changes
+	rm *.build *.dsc *.tar.xz *.deb *.*.tar.xz *.changes *.tar.gz
 	rm log
 }
 
@@ -38,7 +38,7 @@ build(){
 		if [ -f "$d/debian.sh" ]; then
 			if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
 				. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME 
-                                cd ..
+				cd $WORKDIR
 			fi
 		else
 			if [ -d "$d/debian" ]; then
@@ -47,12 +47,13 @@ build(){
 				cp -Rv $d $DEBFOLDERNAME
                                 t="false"
 				cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
-                                if [ "$t"="true" ]; then cd .. ; fi
+				cd $WORKDIR
 			fi
 		fi
 		if [ -f "$d/rpm.sh" ]; then
 			if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
 				. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
+				cd $WORKDIR
 			fi
 		fi
 	done
