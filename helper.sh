@@ -24,7 +24,7 @@ clobber(){
 	for d in *; do
 		day=$(date +%Y%m%d)
 		until [[ $day == *00 ]]; do
-			rm -rfv $d-$day 2> /dev/null
+			rm -rf $d-$day 2> /dev/null
 			((day--))
 		done
 	done
