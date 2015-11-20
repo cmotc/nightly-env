@@ -5,7 +5,6 @@ git clone git@github.com:cmotc/nightly-env.git
 git clone git@github.com:cmotc/awesome-revelation.git
 git clone git@github.com:cmotc/awesome-widget-project.git
 git clone git@github.com:cmotc/hidblock.git
-git clone git@github.com:cmotc/i2pd.git
 git clone git@github.com:cmotc/ratox.git
 git clone git@github.com:cmotc/svirfneblin-alarm-widget.git
 git clone git@github.com:cmotc/svirfneblin-battery-widget.git
@@ -19,5 +18,4 @@ git clone git@github.com:cmotc/svirfneblin-quake-hud.git
 git clone git@github.com:cmotc/svirfneblin-session.git
 git clone git@github.com:cmotc/torbrowser-launcher.git
 git clone git@github.com:cmotc/toxcore.git
-git clone git@github.com:cmotc/toxic.git
 git clone git@github.com:cmotc/tox-vapi.git

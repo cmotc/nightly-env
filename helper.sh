@@ -43,8 +43,10 @@ build(){
 		else
 			if [ -d "$d/debian" ]; then
 				echo "$d/debian.sh file not found. Attempting to build package automatically."
-				DEBFOLDERNAME=$d-$(date +%Y%m%d)
+				DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
+				cd $d && git pull && cd ..
 				cp -Rv $d $DEBFOLDERNAME
+                tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
                                 t="false"
 				cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
 				cd $WORKDIR
