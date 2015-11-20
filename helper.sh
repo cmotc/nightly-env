@@ -8,6 +8,10 @@ if [ "$1" == "no-scripts" ]; then
 	USE_RPMSH_SCRIPTS="N"
 fi
 
+WORKDIR=$(pwd)
+
+echo "Loading build helper scripts in $WORKDIR"
+
 #clean up everything but unfinished folders
 clean(){
 	rm *.build *.dsc *.tar.xz *.deb *.*.tar.xz *.changes
