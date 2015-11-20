@@ -98,7 +98,7 @@ genclone(){
 }
 
 clone(){
-	chmod a+x ./.clone
+	./.clone
 }
 
 #generate a repository.
