@@ -14,12 +14,14 @@ echo "Loading build helper scripts in $WORKDIR"
 
 #clean up everything but unfinished folders
 clean(){
+	cd $WORKDIR
 	rm *.build *.dsc *.tar.xz *.deb *.*.tar.xz *.changes *.tar.gz
 	rm log
 }
 
 #clean up everything including unfinished folders
 clobber(){
+	cd $WORKDIR
 	clean
 	for d in *; do
 		day=$(date +%Y%m%d)
@@ -32,6 +34,7 @@ clobber(){
 
 #build all packages in all subdirectories
 build(){
+	cd $WORKDIR
 	clean
 	alias dh_make="dh_make --yes"
 	for d in *; do
@@ -46,7 +49,7 @@ build(){
 				DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
 				cd $d && git pull && cd ..
 				cp -Rv $d $DEBFOLDERNAME
-                tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
+		                tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
                                 t="false"
 				cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
 				cd $WORKDIR
@@ -64,8 +67,21 @@ build(){
 	fi
 }
 
+#Pull down all the updates from the source repositories.
+update(){
+        cd $WORKDIR
+	for d in *; do
+		if [ -d "$d/.git" ]; then
+			cd $d
+			git pull origin master
+			cd $WORKDIR
+		fi
+        done
+}
+
 #Sign and update packages in remote repository
 upload(){
+	cd $WORKDIR
 	rm -rf ../repository/packages/
 	mkdir -p ../repository/packages/
 	cp *.build *.changes *.tar.xz *.dsc *.deb ../repository/packages/
@@ -79,6 +95,7 @@ upload(){
 
 #generate regeneration script
 genclone(){
+	cd $WORKDIR
 	GLOBIGNORE=.
 	echo "#! /bin/sh" > ./.clone
 	for subdir in *; do
@@ -98,6 +115,7 @@ genclone(){
 }
 
 clone(){
+	cd $WORKDIR
 	./.clone
 }
 
@@ -117,7 +135,7 @@ genrepo(){
 #	this all a little daunting, because my whole goal is to make this system
 #	even more approachable, customizable, and decentralized. git makes this
 #	goal pretty easy.
-
+	cd $WORKDIR
 	git clone https://www.github.com/cmotc/apt-git/apt-git.git ../repository
 #	git clone https://www.github.com/$HOSTID/apt-git/apt-git.git ../repository
 }
