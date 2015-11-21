@@ -117,6 +117,13 @@ genclone(){
 clone(){
 	cd $WORKDIR
 	./.clone
+	for d in *; do
+		if [ -f "$d/gitrepos.sh" ]; then
+			cd $d
+			./gitrepos.sh
+			cd $WORKDIR
+		fi
+	done
 }
 
 #generate a repository.
