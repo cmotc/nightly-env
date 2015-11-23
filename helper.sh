@@ -88,6 +88,7 @@ upload(){
 	if [ ! -d ../repository ]; then
 		genrepo
 	fi
+	cd $WORKDIR
 	cd ../repository/
 	rm -rf debian
 	./apt-git --check
@@ -143,6 +144,7 @@ genrepo(){
 #	even more approachable, customizable, and decentralized. git makes this
 #	goal pretty easy.
 	cd $WORKDIR
-	git clone https://www.github.com/cmotc/apt-git/apt-git.git ../repository
+        git clone git@github.com:cmotc/apt-git.git ../repository
+#	git clone https://www.github.com/cmotc/apt-git/apt-git.git ../repository
 #	git clone https://www.github.com/$HOSTID/apt-git/apt-git.git ../repository
 }
