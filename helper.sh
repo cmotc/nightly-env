@@ -142,7 +142,7 @@ force_sub_update(){
 	for d in *; do
 		if [ -d "$d/.git" ]; then
 			cd $d && git commit -am "$(date)"
-			git push
+			git push --set-upstream origin master
 			cd $WORKDIR
 		fi
 	done
