@@ -140,7 +140,7 @@ force_sub_update(){
 	cd $WORKDIR
 	for d in *; do
 		if [ -d "$d/.git" ]; then
-			git commit -am $(date) && git push
+			git commit -am "$(date)" && git push
 		fi
 	done
 }
