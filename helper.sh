@@ -131,7 +131,8 @@ force_update(){
 	cd $WORKDIR
 	for d in *; do
 		if [ -d "$d/.git" ]; then
-			git pull
+			cd $d && git pull
+			cd $WORKDIR
 		fi
 	done
 }
@@ -140,7 +141,8 @@ force_sub_update(){
 	cd $WORKDIR
 	for d in *; do
 		if [ -d "$d/.git" ]; then
-			git commit -am "$(date)" && git push
+			cd $d && git commit -am "$(date)" && git push
+			cd $WORKDIR
 		fi
 	done
 }
