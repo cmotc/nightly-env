@@ -136,6 +136,15 @@ force_update(){
 	done
 }
 
+force_sub_update(){
+	cd $WORKDIR
+	for d in *; do
+		if [ -d "$d/.git" ]; then
+			git commit -am $(date) && git push
+		fi
+	done
+}
+
 #generate a repository.
 genrepo(){ 
 #	This command should be able to generate a repository for upload.
