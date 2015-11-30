@@ -129,7 +129,6 @@ clone(){
 
 force_update(){
 	cd $WORKDIR
-	./.clone
 	for d in *; do
 		if [ -d "$d/.git" ]; then
 			git pull
