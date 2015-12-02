@@ -37,31 +37,60 @@ build(){
 	cd $WORKDIR
 	clean
 	alias dh_make="dh_make --yes"
-	for d in *; do
-		if [ -f "$d/debian.sh" ]; then
-			if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-				. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME 
-				cd $WORKDIR
+	if [ "$1" != ""]; then
+		if [ "$1" != "upload" ]; then
+			d="$1"
+			if [ -f "$d/debian.sh" ]; then
+				if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
+					. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME 
+					cd $WORKDIR
+				fi
+			else
+				if [ -d "$d/debian" ]; then
+					echo "$d/debian.sh file not found. Attempting to build package automatically."
+					DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
+					cd $d && git pull && cd ..
+					cp -Rv $d $DEBFOLDERNAME
+					tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
+			                t="false"
+					cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
+					cd $WORKDIR
+				fi
 			fi
-		else
-			if [ -d "$d/debian" ]; then
-				echo "$d/debian.sh file not found. Attempting to build package automatically."
-				DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
-				cd $d && git pull && cd ..
-				cp -Rv $d $DEBFOLDERNAME
-		                tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
-                                t="false"
-				cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
-				cd $WORKDIR
-			fi
+			if [ -f "$d/rpm.sh" ]; then
+				if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
+					. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
+					cd $WORKDIR
+				fi
+			fi		
 		fi
-		if [ -f "$d/rpm.sh" ]; then
-			if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
-				. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
-				cd $WORKDIR
+	else
+		for d in *; do
+			if [ -f "$d/debian.sh" ]; then
+				if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
+					. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME 
+					cd $WORKDIR
+				fi
+			else
+				if [ -d "$d/debian" ]; then
+					echo "$d/debian.sh file not found. Attempting to build package automatically."
+					DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
+					cd $d && git pull && cd ..
+					cp -Rv $d $DEBFOLDERNAME
+				        tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
+		                        t="false"
+					cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
+					cd $WORKDIR
+				fi
 			fi
-		fi
-	done
+			if [ -f "$d/rpm.sh" ]; then
+				if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
+					. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
+					cd $WORKDIR
+				fi
+			fi
+		done
+	fi
 	if [ "$1" = "upload" ] ; then
 		upload
 	fi
