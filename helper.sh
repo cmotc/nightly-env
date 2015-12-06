@@ -32,6 +32,18 @@ clobber(){
 	done
 }
 
+#clean up everything but the built packages
+dustup(){
+	cd $WORKDIR
+	for d in *; do
+		day=$(date +%Y%m%d)
+		until [[ $day == *00 ]]; do
+			rm -rf $d-$day 2> /dev/null
+			((day--))
+		done
+	done
+}
+
 #build all packages in all subdirectories
 build(){
 	cd $WORKDIR
