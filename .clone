@@ -1,12 +1,16 @@
 git clone git@github.com:cmotc/apt-git.git
 git clone git@github.com:cmotc/awesome-conky-hud.git
 git clone git@github.com:cmotc/awesome-conky-starter.git
-git clone git@github.com:cmotc/nightly-env
+git clone git@github.com:cmotc/nightly-env.git
 git clone git@github.com:cmotc/awesome-revelation.git
 git clone git@github.com:cmotc/awesome-widget-project.git
+git clone git@github.com:cmotc/android_kernel_samsung_schS738c.git
+git clone git@github.com:cmotc/fireblock.git
 git clone git@github.com:cmotc/hidblock.git
-git clone git@github.com:cmotc/nightly-env.git
+git clone git@github.com:cmotc/linux.git
+git clone git@github.com:cmotc/lua-github.git
 git clone git@github.com:cmotc/ratox.git
+git clone git@github.com:cmotc/spacehamster.git
 git clone git@github.com:cmotc/svirfneblin-alarm-widget.git
 git clone git@github.com:cmotc/svirfneblin-battery-widget.git
 git clone git@github.com:cmotc/svirfneblin-conky-hud.git
@@ -14,6 +18,7 @@ git clone git@github.com:cmotc/svirfneblin-conky-starter.git
 git clone git@github.com:cmotc/svirfneblin-goblin
 git clone git@github.com:cmotc/svirfneblin-hidcontrol-widget.git
 git clone git@github.com:cmotc/svirfneblin-keyring-agent.git
+git clone git@github.com:cmotc/svirfneblin-netmonitor-widget.git
 git clone git@github.com:cmotc/svirfneblin-network-manager.git
 git clone git@github.com:cmotc/svirfneblin-panel.git
 git clone git@github.com:cmotc/svirfneblin-quake-hud.git
@@ -21,3 +26,5 @@ git clone git@github.com:cmotc/svirfneblin-session.git
 git clone git@github.com:cmotc/torbrowser-launcher.git
 git clone git@github.com:cmotc/toxcore.git
 git clone git@github.com:cmotc/tox-vapi.git
+git clone git@github.com:cmotc/toxvpn.git
+git clone git@github.com:cmotc/tribler.git
