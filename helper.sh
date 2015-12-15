@@ -2,10 +2,11 @@
 
 USE_DEBSH_SCRIPTS="Y"
 USE_RPMSH_SCRIPTS="Y"
-
+USE_DROIDSH_SCRIPTS="Y"
 if [ "$1" == "no-scripts" ]; then
 	USE_DEBSH_SCRIPTS="N"
 	USE_RPMSH_SCRIPTS="N"
+	USE_DROIDSH_SCRIPTS="N"
 fi
 
 WORKDIR=$(pwd)
@@ -44,6 +45,32 @@ dustup(){
 	done
 }
 
+#Helper for building debian packages with no alterations
+deb_nosh(){
+	d="$1"
+	echo "$d/debian.sh file not found. Attempting to build package automatically."
+	DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
+	cd "$d" && git pull && cd ..
+	cp -Rv "$d" $DEBFOLDERNAME
+	tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
+	t="false"
+	cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
+	cd $WORKDIR
+}
+#Helper for building redhat packages with no alterations
+rpm_nosh(){
+	d="$1"
+	echo "I don't know how to build rpm packages yet so $d.rpm does not build. Skipping and proceeding normally."
+	cd $WORKDIR
+}
+
+#Helper for building android packages with no alterations
+droid_nosh(){
+	d="$1"
+	echo "I don't know how to build rpm packages yet so $d.apk does not build. Skipping and proceeding normally."
+	cd $WORKDIR
+}
+
 #build all packages in all subdirectories
 build(){
 	cd $WORKDIR
@@ -59,14 +86,7 @@ build(){
 				fi
 			else
 				if [ -d "$d/debian" ]; then
-					echo "$d/debian.sh file not found. Attempting to build package automatically."
-					DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
-					cd $d && git pull && cd ..
-					cp -Rv $d $DEBFOLDERNAME
-					tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
-			                t="false"
-					cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
-					cd $WORKDIR
+					deb_nosh "$d"
 				fi
 			fi
 			if [ -f "$d/rpm.sh" ]; then
@@ -74,7 +94,19 @@ build(){
 					. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
 					cd $WORKDIR
 				fi
-			fi		
+			else
+				if [ -f "$d/*.spec"]; then
+					rpm_nosh "$d"
+				fi
+			fi
+			if [ -f "$d/droid.sh" ]; then
+				if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
+					. "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
+					cd $WORKDIR
+				fi
+			else
+				droid_nosh "$d"
+			fi
 		fi
 	else
 		for d in *; do
@@ -85,14 +117,7 @@ build(){
 				fi
 			else
 				if [ -d "$d/debian" ]; then
-					echo "$d/debian.sh file not found. Attempting to build package automatically."
-					DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
-					cd $d && git pull && cd ..
-					cp -Rv $d $DEBFOLDERNAME
-				        tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
-		                        t="false"
-					cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
-					cd $WORKDIR
+					deb_nosh "$d"
 				fi
 			fi
 			if [ -f "$d/rpm.sh" ]; then
@@ -100,6 +125,20 @@ build(){
 					. "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
 					cd $WORKDIR
 				fi
+			else
+				if [ -f "$d/*.spec"]; then
+					rpm_nosh "$d"
+				else
+					echo "Not enough information to build .rpm package"
+				fi
+			fi
+			if [ -f "$d/droid.sh" ]; then
+				if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
+					. "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
+					cd $WORKDIR
+				fi
+			else
+				droid_nosh "$d"
 			fi
 		done
 	fi
@@ -203,10 +242,10 @@ genrepo(){
 #	because they're just https servers which means you can shoehorn one into
 #	pretty much anything that'll give you the space to do it. Which makes
 #	this all a little daunting, because my whole goal is to make this system
-#	even more approachable, customizable, and decentralized. git makes this
-#	goal pretty easy.
+#	even more approachable, customizable, and decentralized and all those
+#	options leave the definition of those terms open to interpretation.
 	cd $WORKDIR
-        git clone git@github.com:cmotc/apt-git.git ../repository
+        git clone git@github.com:cmotc/fdroid-git.git ../repository
 #	git clone https://www.github.com/cmotc/apt-git/apt-git.git ../repository
 #	git clone https://www.github.com/$HOSTID/apt-git/apt-git.git ../repository
 }
