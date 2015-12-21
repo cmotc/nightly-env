@@ -9,14 +9,14 @@ if [ "$1" == "no-scripts" ]; then
 	USE_DROIDSH_SCRIPTS="N"
 fi
 
-WORKDIR=$(pwd)
+export WORKDIR=$(pwd)
 
 echo "Loading build helper scripts in $WORKDIR"
 
 #clean up everything but unfinished folders
 clean(){
 	cd $WORKDIR
-	rm *.build *.dsc *.tar.xz *.deb *.*.tar.xz *.changes *.tar.gz
+	rm *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2
 	rm log
 }
 
@@ -67,7 +67,22 @@ rpm_nosh(){
 #Helper for building android packages with no alterations
 droid_nosh(){
 	d="$1"
-	echo "I don't know how to build rpm packages yet so $d.apk does not build. Skipping and proceeding normally."
+	$DROIDFOLDERNAME="$d""_"$(date +%Y%m%d)
+	cd "$d" && git pull && cd ../
+	cd "$d" && git pull && cd ..
+	cp -Rv "$d" $DROIDFOLDERNAME
+#You know what? Fuck it. Might be useful.
+	tar -czvf $DROIDFOLDERNAME.orig.tar.gz $DROIDFOLDERNAME
+	t="false"
+	cd $DROIDFOLDERNAME && ant build && t="true" >> ../log
+	if [ ! $t == "true" ]; then
+		ant debug
+		t="true"
+	fi
+	if [ $t == "true" ]; then
+		cd $WORKDIR
+		cp $DROIDFOLDERNAME/bin/*.apk ./
+	fi
 	cd $WORKDIR
 }
 
