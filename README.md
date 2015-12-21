@@ -57,6 +57,9 @@ in your terminal. It's right at the top of the file too.
 and .deb. When ./clean deletes all folders ending in a numeric date, so will
 helper.sh->clean
 
+  * dustup: delete all generated temporary folders(dated folders) but leave
+logs and built packages.
+
   * clobber: runs clean, but also deletes any subfolders ending in a date(i.e.
 generated subfolders.)
 
@@ -90,11 +93,13 @@ Could have more features.
 Issues
 ------
 
-Debian Specific for now. Might support RPM in the future. Arch and Gentoo people
-can do what they want if they need it. They know what's up. I just don't care to
-learn a dozen packaging systems at once when like, 3 is the most I have the
-energy for.
+Debian Specific for now. Experimental support for simple Android projects using
+Ant. Gradle and Maven are on the way once that's done. Might support RPM in the
+future. Arch and Gentoo people can do what they want if they need it. They know
+what's up. I just don't care to learn a dozen packaging systems at once when 
+like, 3 is the most I have the energy for.
 
 Support for SSH keys, or for converting between git@github.com:\*/\*.git remotes
 and https://github.com/*/*.git remotes in the absence of a working SSH key for
 the repository.
+
