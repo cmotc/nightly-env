@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Mon, 21 Dec 2015 20:58:26 -0500
+Date: Mon, 21 Dec 2015 21:03:56 -0500
 Source: android-scullery
 Binary: android-scullery
 Architecture: source all
@@ -15,17 +15,17 @@ Changes:
  .
    * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 Checksums-Sha1:
- eb835ab5a2cdd29e2d772bcb6506c2bdb645ea90 923 android-scullery_20151221-1.dsc
- 436a62774c69dfd63450d36291dd8157b54d4bd0 91920 android-scullery_20151221.orig.tar.xz
- 9e42d18801ee53633ecaecc433105d92bcb9b289 2376 android-scullery_20151221-1.debian.tar.xz
- f7c0aa8437de779df55d4f2fbe670e50f6521447 8810 android-scullery_20151221-1_all.deb
+ e6962d52ea2ba6561862d1630349dc6d4b26da8c 923 android-scullery_20151221-1.dsc
+ 0eb4bc4a91fd6b127703d89cbe2fa6c2d848f1e0 91936 android-scullery_20151221.orig.tar.xz
+ 69fb6df02bc1b6075c00225189ba2147e433d014 2372 android-scullery_20151221-1.debian.tar.xz
+ adbdaa11124efe2332a460571b4b99cb4eccbd64 8822 android-scullery_20151221-1_all.deb
 Checksums-Sha256:
- be55b911f4e4fa23dd1c69988d3297558ffc3860faa189d53e830f7fa25d0530 923 android-scullery_20151221-1.dsc
- c0081ff51d9d6fb0b3e79ba63a87e73c90abdc6e239af1d58869a15b76a7de33 91920 android-scullery_20151221.orig.tar.xz
- 52d5b81a90fd608dee90f93e8f58293448292edf4cd784c82c1cb1c72ed456c7 2376 android-scullery_20151221-1.debian.tar.xz
- 1dce2d4b3e26e78aefc28ae1ac945ca1ae335e0f612049d4dcbf1dcae56544bb 8810 android-scullery_20151221-1_all.deb
+ 32008e83248d635088085733b2fafe1affdb882d99f9f3ce0a78093f0a9d13e6 923 android-scullery_20151221-1.dsc
+ c618f4343fe4db23e947ae876e2ea176f9df5f32a2db6bc80e1ffc65da8c1fe3 91936 android-scullery_20151221.orig.tar.xz
+ d14fb878cbc151339b1adee32f8f37788fc5f85de54b02ce1058008e073315a1 2372 android-scullery_20151221-1.debian.tar.xz
+ a56eb23ac2d2a60429912e4131d5452175789d4ae52fb091424326ae6d378768 8822 android-scullery_20151221-1_all.deb
 Files:
- e63455a120d2a67ab37c22cf6a20314c 923 unknown optional android-scullery_20151221-1.dsc
- 26c56d75cc5a791760daafec9baa5c14 91920 unknown optional android-scullery_20151221.orig.tar.xz
- 5b578df02a56b6731fd231954231d38a 2376 unknown optional android-scullery_20151221-1.debian.tar.xz
- 0e66ae361cd4d3337d7b089158e69dc8 8810 unknown optional android-scullery_20151221-1_all.deb
+ a4c02a208166fcd7d9ee9b3935bf4377 923 unknown optional android-scullery_20151221-1.dsc
+ ade61a51260a8b0ed1fab49340c6b7ad 91936 unknown optional android-scullery_20151221.orig.tar.xz
+ cce80038f5a93e6259116e0847e08f9a 2372 unknown optional android-scullery_20151221-1.debian.tar.xz
+ 13f73dc2937b18309877734a1eb95b28 8822 unknown optional android-scullery_20151221-1_all.deb
