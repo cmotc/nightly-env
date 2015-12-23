@@ -10,11 +10,11 @@ Build-Depends: debhelper (>= 9)
 Package-List:
  android-scullery deb unknown optional arch=all
 Checksums-Sha1:
- 0eb4bc4a91fd6b127703d89cbe2fa6c2d848f1e0 91936 android-scullery_20151221.orig.tar.xz
- 69fb6df02bc1b6075c00225189ba2147e433d014 2372 android-scullery_20151221-1.debian.tar.xz
+ 1bef1452592e81145df480791ab8f5c87c7f00a0 105372 android-scullery_20151221.orig.tar.xz
+ 99f602a0b571cd451deed15de1496c3320d049e8 2376 android-scullery_20151221-1.debian.tar.xz
 Checksums-Sha256:
- c618f4343fe4db23e947ae876e2ea176f9df5f32a2db6bc80e1ffc65da8c1fe3 91936 android-scullery_20151221.orig.tar.xz
- d14fb878cbc151339b1adee32f8f37788fc5f85de54b02ce1058008e073315a1 2372 android-scullery_20151221-1.debian.tar.xz
+ 14f64e48a30457ce2f12d7f38acc63b8f860b13b5aa8d6df205cc000dc163821 105372 android-scullery_20151221.orig.tar.xz
+ fc9d2a3433716b5ba4d114578fd7dc8b59aff870894b1e5e99f2a4f3c55ab86d 2376 android-scullery_20151221-1.debian.tar.xz
 Files:
- ade61a51260a8b0ed1fab49340c6b7ad 91936 android-scullery_20151221.orig.tar.xz
- cce80038f5a93e6259116e0847e08f9a 2372 android-scullery_20151221-1.debian.tar.xz
+ 639b1eed400946152485de1927070eeb 105372 android-scullery_20151221.orig.tar.xz
+ 1fec2515438beadae03d3f35c5489427 2376 android-scullery_20151221-1.debian.tar.xz
