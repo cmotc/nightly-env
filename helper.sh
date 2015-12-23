@@ -1,8 +1,8 @@
 #! /bin/sh
 
 USE_DEBSH_SCRIPTS="Y"
-USE_RPMSH_SCRIPTS="Y"
-USE_DROIDSH_SCRIPTS="Y"
+USE_RPMSH_SCRIPTS="N"
+USE_DROIDSH_SCRIPTS="N"
 if [ "$1" == "no-scripts" ]; then
 	USE_DEBSH_SCRIPTS="N"
 	USE_RPMSH_SCRIPTS="N"
@@ -16,7 +16,7 @@ echo "Loading build helper scripts in $WORKDIR"
 #clean up everything but unfinished folders
 clean(){
 	cd $WORKDIR
-	rm *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2
+	rm *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2 *.apk
 	rm log
 }
 
