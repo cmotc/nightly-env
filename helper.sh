@@ -3,7 +3,7 @@
 USE_DEBSH_SCRIPTS="Y"
 USE_RPMSH_SCRIPTS="N"
 USE_DROIDSH_SCRIPTS="N"
-if [ "$1" == "no-scripts" ]; then
+if [ "$1" = "no-scripts" ]; then
 	USE_DEBSH_SCRIPTS="N"
 	USE_RPMSH_SCRIPTS="N"
 	USE_DROIDSH_SCRIPTS="N"
@@ -26,9 +26,9 @@ clobber(){
 	clean
 	for d in *; do
 		day=$(date +%Y%m%d)
-		until [[ $day == *00 ]]; do
-			rm -rf $d-$day 2> /dev/null
-			((day--))
+		until [ $day = *00 ]; do
+			rm -rf "$d-$day" 2> /dev/null
+			day=$((day-1))
 		done
 	done
 }
@@ -38,9 +38,9 @@ dustup(){
 	cd $WORKDIR
 	for d in *; do
 		day=$(date +%Y%m%d)
-		until [[ $day == *00 ]]; do
-			rm -rf $d-$day 2> /dev/null
-			((day--))
+		until [ $day = *00 ]; do
+			rm -rf "$d-$day" 2> /dev/null
+			day=$((day-1))
 		done
 	done
 }
@@ -75,11 +75,11 @@ droid_nosh(){
 	tar -czvf $DROIDFOLDERNAME.orig.tar.gz $DROIDFOLDERNAME
 	t="false"
 	cd $DROIDFOLDERNAME && ant build && t="true" >> ../log
-	if [ ! $t == "true" ]; then
+	if [ ! $t = "true" ]; then
 		ant debug
 		t="true"
 	fi
-	if [ $t == "true" ]; then
+	if [ $t = "true" ]; then
 		cd $WORKDIR
 		cp $DROIDFOLDERNAME/bin/*.apk ./
 	fi
@@ -91,9 +91,12 @@ build(){
 	cd $WORKDIR
 	clean
 	alias dh_make="dh_make --yes"
-	if [ "$1" != ""]; then
+	echo "$1"
+	if [ "$1" != "" ]; then
+		echo "$1"
 		if [ "$1" != "upload" ]; then
 			d="$1"
+			echo "$d"
 			if [ -f "$d/debian.sh" ]; then
 				if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
 					. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME 
