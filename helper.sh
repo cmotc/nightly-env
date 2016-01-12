@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# Use can add any of these variables to ~/.fyrixrc to alter the behavior of the
+# script.
+
 USE_APT_GIT="yes"
 GITHUB_USE_SSH="no"
 GITHUB_USERNAME="error_empty_user"
