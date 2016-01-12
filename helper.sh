@@ -6,6 +6,15 @@
 USE_APT_GIT="no"
 GITHUB_USE_SSH="no"
 GITHUB_USERNAME="error_empty_user"
+
+if [ -f "~/.fyrixrc" ]; then
+    . "~/.fyrixrc"
+fi
+
+if [ -f ".helperc" ]; then
+    . ".helperc"
+fi
+
 if [ -n "$USE_ABS_PATH" ]; then
     USE_ABS_PATH="no"
     echo $USE_ABS_PATH
@@ -15,10 +24,6 @@ elif [ "$USE_ABS_PATH" = "no" ]; then
 else
     USE_ABS_PATH="yes"
     echo $USE_ABS_PATH
-fi
-
-if [ -f "~/.fyrixrc" ]; then
-    . "~/.fyrixrc"
 fi
 
 if [ "$USE_APT_GIT" != "yes" ]; then
