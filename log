@@ -1,0 +1,63 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package joker
+dpkg-buildpackage: source version 20160111-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by dyngar <dyngar@dyngar.local>
+ dpkg-source --before-build joker-20160111
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+make[1]: Entering directory '/home/dyngar/Projects/Distro_OS_Projects/packages/joker-20160111'
+rm -f joker.o packets.o node.o tests.o mac_storage.o
+rm -f joker
+make[1]: Leaving directory '/home/dyngar/Projects/Distro_OS_Projects/packages/joker-20160111'
+   dh_clean
+ dpkg-source -b joker-20160111
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building joker using existing ./joker_20160111.orig.tar.xz
+dpkg-source: warning: ignoring deletion of file node.o, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file tests.o, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file joker.o, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file mac_storage.o, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file packets.o, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file joker, use --include-removal to override
+dpkg-source: info: building joker in joker_20160111-1.debian.tar.xz
+dpkg-source: info: building joker in joker_20160111-1.dsc
+ debian/rules build
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+make[1]: Entering directory '/home/dyngar/Projects/Distro_OS_Projects/packages/joker-20160111'
+cc -g -O3 -Wall -Wextra   -c joker.c -o joker.o
+cc -g -O3 -Wall -Wextra   -c packets.c -o packets.o
+cc -g -O3 -Wall -Wextra   -c node.c -o node.o
+cc -g -O3 -Wall -Wextra   -c tests.c -o tests.o
+tests.c: In function ‘sniff_reinject_bpackets’:
+tests.c:215:59: warning: unused parameter ‘ifmac’ [-Wunused-parameter]
+ void sniff_reinject_bpackets(pcap_t *pcap_handle, u_char *ifmac, int test) {
+                                                           ^
+cc -g -O3 -Wall -Wextra   -c mac_storage.c -o mac_storage.o
+cc   joker.o packets.o node.o tests.o mac_storage.o -lpcap -lpthread -o joker
+make[1]: Leaving directory '/home/dyngar/Projects/Distro_OS_Projects/packages/joker-20160111'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+make[1]: Entering directory '/home/dyngar/Projects/Distro_OS_Projects/packages/joker-20160111'
+install -D -m 0755 joker /home/dyngar/Projects/Distro_OS_Projects/packages/joker-20160111/debian/joker//usr/local/sbin/joker
+make[1]: Leaving directory '/home/dyngar/Projects/Distro_OS_Projects/packages/joker-20160111'
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_usrlocal
+dh_usrlocal: debian/joker/usr/local/sbin/joker is not a directory
+rmdir: failed to remove ‘debian/joker/usr/local/sbin’: Directory not empty
+dh_usrlocal: rmdir debian/joker/usr/local/sbin returned exit code 1
+debian/rules:22: recipe for target 'binary' failed
+make: *** [binary] Error 1
+dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit status 2
