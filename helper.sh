@@ -319,5 +319,4 @@ keys are also reccommended."
             fi
         fi
     fi
-#    git clone https://www.github.com/$HOSTID/apt-git/apt-git.git ../repository
 }
