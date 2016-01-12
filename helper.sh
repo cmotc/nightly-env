@@ -15,18 +15,16 @@ if [ -f ".helperc" ]; then
     . ".helperc"
 fi
 
-if [ -n "$USE_ABS_PATH" ]; then
+if [ ! $(echo "$USE_ABS_PATH" | grep "yes") ]; then
     USE_ABS_PATH="no"
     echo $USE_ABS_PATH
 elif [ "$USE_ABS_PATH" = "no" ]; then
     USE_ABS_PATH="no"
-    echo $USE_ABS_PATH
 else
     USE_ABS_PATH="yes"
-    echo $USE_ABS_PATH
 fi
 
-if [ "$USE_APT_GIT" != "yes" ]; then
+if [ "$USE_APT_GIT" = "yes" ]; then
     if [ "$GITHUB_USERNAME" != "error_empty_user" ]; then
         if [ "$GITHUB_USE_SSH" != "no" ]; then
             GITHUB_URL="git@github.com/$GITHUB_USERNAME"
