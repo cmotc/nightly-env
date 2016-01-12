@@ -24,13 +24,7 @@ clean(){
 clobber(){
 	cd $WORKDIR
 	clean
-	for d in *; do
-		day=$(date +%Y%m%d)
-		until [ $day = *00 ]; do
-			rm -rf "$d-$day" 2> /dev/null
-			day=$((day-1))
-		done
-	done
+	dustup
 }
 
 #clean up everything but the built packages
@@ -38,7 +32,7 @@ dustup(){
 	cd $WORKDIR
 	for d in *; do
 		day=$(date +%Y%m%d)
-		until [ $day = *00 ]; do
+		until [ $(echo "$day" | grep "00") ]; do
 			rm -rf "$d-$day" 2> /dev/null
 			day=$((day-1))
 		done
