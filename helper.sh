@@ -6,6 +6,16 @@
 USE_APT_GIT="no"
 GITHUB_USE_SSH="no"
 GITHUB_USERNAME="error_empty_user"
+if [ -n "$USE_ABS_PATH" ]; then
+    USE_ABS_PATH="no"
+    echo $USE_ABS_PATH
+elif [ "$USE_ABS_PATH" = "no" ]; then
+    USE_ABS_PATH="no"
+    echo $USE_ABS_PATH
+else
+    USE_ABS_PATH="yes"
+    echo $USE_ABS_PATH
+fi
 
 if [ -f "~/.fyrixrc" ]; then
     . "~/.fyrixrc"
@@ -35,6 +45,10 @@ if [ "$1" = "no-scripts" ]; then
 fi
 
 export WORKDIR=$(pwd)
+
+if [ "$USE_ABS_PATH" = "yes" ]; then
+    WORKDIR=$(cd `dirname $0` && pwd)
+fi
 
 echo "Loading build helper scripts in $WORKDIR"
 
