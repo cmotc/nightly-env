@@ -258,7 +258,47 @@ genrepo(){
 #    even more approachable, customizable, and decentralized and all those
 #    options leave the definition of those terms open to interpretation.
     cd $WORKDIR
+
 #    git clone git@github.com:cmotc/fdroid-git.git ../repository
-    git clone https://www.github.com/cmotc/apt-git/apt-git.git ../repository
+    if [ -d "$WORKDIR/../repository" ]; then
+        if [ $(ls "$WORKDIR/*.deb") ]; then
+            if [ $(cat "$WORKDIR/../repository/.debian" | grep "1") ]; then
+                git remote add debian https://www.github.com/cmotc/apt-git/apt-git.git
+                git pull origin debian
+            fi
+        fi
+        if [ $(ls "$WORKDIR/*.apk") ]; then
+            if [ $(cat "$WORKDIR/../repository/.android" | grep "1") ]; then
+                git remote add droid https://www.github.com/cmotc/apt-git/fdroid-git.git
+                git pull origin droid
+            fi
+        fi
+        if [ $(ls "$WORKDIR/*.rpm") ]; then
+            if [ $(cat "$WORKDIR/../repository/.redhat" | grep "1") ]; then
+                git remote add redhat https://www.github.com/cmotc/apt-git/rpm-git.git
+                git pull origin redhat
+            fi
+        fi
+    else
+        git clone https://www.github.com/cmotc/repo-git/repo-git.git
+        if [ $(ls "$WORKDIR/*.deb") ]; then
+            if [ $(cat "$WORKDIR/../repository/.debian" | grep "1") ]; then
+                git remote add debian https://www.github.com/cmotc/apt-git/apt-git.git
+                git pull origin debian
+            fi
+        fi
+        if [ $(ls "$WORKDIR/*.apk") ]; then
+            if [ $(cat "$WORKDIR/../repository/.android" | grep "1") ]; then
+                git remote add droid https://www.github.com/cmotc/apt-git/fdroid-git.git
+                git pull origin droid
+            fi
+        fi
+        if [ $(ls "$WORKDIR/*.rpm") ]; then
+            if [ $(cat "$WORKDIR/../repository/.redhat" | grep "1") ]; then
+                git remote add redhat https://www.github.com/cmotc/apt-git/rpm-git.git
+                git pull origin redhat
+            fi
+        fi
+    fi
 #    git clone https://www.github.com/$HOSTID/apt-git/apt-git.git ../repository
 }
