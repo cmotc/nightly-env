@@ -1,0 +1,34 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package nightly-env
+dpkg-buildpackage: source version 20160112-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by dyngar <dyngar@dyngar.local>
+ dpkg-source --before-build nightly-env-20160112
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b nightly-env-20160112
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building nightly-env using existing ./nightly-env_20160112.orig.tar.xz
+dpkg-source: info: building nightly-env in nightly-env_20160112-1.debian.tar.xz
+dpkg-source: info: building nightly-env in nightly-env_20160112-1.dsc
+ debian/rules build
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+   dh_install
+cp: cannot stat ‘debian/tmp/helper.sh’: No such file or directory
+dh_install: cp -a debian/tmp/helper.sh debian/nightly-env/usr/bin/ returned exit code 1
+debian/rules:22: recipe for target 'binary' failed
+make: *** [binary] Error 2
+dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit status 2

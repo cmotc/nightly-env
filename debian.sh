@@ -6,7 +6,7 @@ SOURCEDOC=README.md
 DEBFOLDER=nightly-env
 DEBVERSION=$(date +%Y%m%d)
 
-cd hidblock 
+cd $DEBFOLDER 
 
 git pull origin master
 
@@ -23,7 +23,7 @@ cd $DEBFOLDERNAME
 dh_make -s --indep --createorig 
 
 mkdir -p debian/tmp
-cp * debian/tmp
+cp -R * debian/tmp
 
 # Remove make calls
 grep -v makefile debian/rules > debian/rules.new 
