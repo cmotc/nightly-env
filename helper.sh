@@ -58,7 +58,8 @@ echo "Loading build helper scripts in $WORKDIR"
 #clean up everything but unfinished folders
 clean(){
     cd $WORKDIR
-    rm *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2 *.apk &> /dev/null
+    echo -n "Removing "
+    rm *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2 *.apk 2> /dev/null
     rm log
 }
 
@@ -75,6 +76,7 @@ dustup(){
     for d in *; do
         day=$(date +%Y%m%d)
         until [ $(echo "$day" | grep "00") ]; do
+	    echo "removing $d-$day"
             rm -rf "$d-$day" 2> /dev/null
             day=$((day-1))
         done
@@ -240,7 +242,7 @@ genclone(){
         remote=$(git remote -v)
         for word in $remote; do
             if [ `echo "$word" | grep 'git@' ` ]; then
-                echo "git clone $word" >> ../clone-$(date +%Y%m%d)
+                echo "git clone $word $subdir" >> ../clone-$(date +%Y%m%d)
             fi
         done
         cd -
