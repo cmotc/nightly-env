@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Mon, 18 Jan 2016 03:47:05 -0500
+Source: valair
+Binary: valair
+Architecture: source all
+Version: 20160118-1
+Distribution: unstable
+Urgency: low
+Maintainer: dyngar <dyngar@dyngar.local>
+Changed-By: dyngar <dyngar@dyngar.local>
+Description:
+ valair     - <insert up to 60 chars description>
+Changes:
+ valair (20160118-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ 922dc95b9868f826ef00ff0251f18ae340d5378a 828 valair_20160118-1.dsc
+ 8d28d694ef94a2bee7de0afec5f89b19131e050d 177336 valair_20160118.orig.tar.xz
+ ea97cb4645bad7972f15e29ac857e6f50146aa60 2472 valair_20160118-1.debian.tar.xz
+ be4310b2fd51bdd380aa2874f10cecd985a80a87 21238 valair_20160118-1_all.deb
+Checksums-Sha256:
+ 1401bb88f0cc32961cf5fdd97b2c0f8baaa070c8319f6145946e7922d97cad7b 828 valair_20160118-1.dsc
+ 8f82e603654bdadec4e0af8c8beef0e78bbd0befefe98cbf5527b3055d2a7b27 177336 valair_20160118.orig.tar.xz
+ 52f12c93174b08ea4b02f10a85196c25674d765d57baf42f37676a10eb492461 2472 valair_20160118-1.debian.tar.xz
+ 754f0184e367f4353cb0dbe7ccc279dd2428f52e2e716dbaca110f719de8facf 21238 valair_20160118-1_all.deb
+Files:
+ bc422544eac27a1e15f17e9302c25b06 828 unknown optional valair_20160118-1.dsc
+ 302a7a2536e3e0bb22324120a7d5fe03 177336 unknown optional valair_20160118.orig.tar.xz
+ 0b4edb0d1d24f425c82718c557149372 2472 unknown optional valair_20160118-1.debian.tar.xz
+ 3a7f2803a5cac6a818006a799f9036f1 21238 unknown optional valair_20160118-1_all.deb

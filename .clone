@@ -1,59 +1,67 @@
-git clone git@github.com:cmotc/1plus1toolkit.git
-git clone git@github.com:cmotc/android_kernel_motorola_msm8610.git
-git clone git@github.com:cmotc/Android-Kitchen.git
-git clone git@github.com:cmotc/android-scullery.git
-git clone git@github.com:cmotc/apt-git.git
-git clone git@github.com:cmotc/ath6kl-firmware.git
-git clone git@github.com:cmotc/awesome-conky-hud.git
-git clone git@github.com:cmotc/awesome-conky-starter.git
-git clone git@github.com:cmotc/nightly-env.git
-git clone git@github.com:cmotc/awesome-revelation.git
-git clone git@github.com:cmotc/awesome-widget-project.git
-git clone git@github.com:cmotc/cjdns.git
-git clone git@github.com:cmotc/cloudflare-scrape.git
-git clone git@github.com:cmotc/cloudget.git
-git clone git@github.com:cmotc/conky-clicky.git
-git clone git@github.com:cmotc/debianize-android-rom.git
-git clone git@github.com:cmotc/android_kernel_samsung_schS738c.git
-git clone git@github.com:cmotc/email_sms_mms_gateways.git
-git clone git@github.com:cmotc/fdroid-git.git
-git clone git@github.com:cmotc/fireblock.git
-git clone git@github.com:cmotc/gittorrent
-git clone git@github.com:cmotc/grepemails.git
-git clone git@github.com:cmotc/hidblock.git
-git clone git@github.com:cmotc/joker.git
-git clone git@github.com:cmotc/linux.git
-git clone git@github.com:cmotc/lua-github.git
-git clone git@github.com:cmotc/Raccoon.git
-git clone git@github.com:cmotc/ratox.git
-git clone git@github.com:cmotc/sdl2-vapi.git
-git clone git@github.com:cmotc/smali.git
-git clone git@github.com:cmotc/spacehamster.git
-git clone git@github.com:cmotc/spssg
-git clone git@github.com:cmotc/svirfneblin-alarm-widget.git
-git clone git@github.com:cmotc/svirfneblin-battery-widget.git
-git clone git@github.com:cmotc/svirfneblin-conky-hud.git
-git clone git@github.com:cmotc/svirfneblin-conky-starter.git
-git clone git@github.com:cmotc/svirfneblin-florence-config.git
-git clone git@github.com:cmotc/svirfneblin-goblin
-git clone git@github.com:cmotc/svirfneblin-hidcontrol-widget.git
-git clone git@github.com:cmotc/svirfneblin-keyring-agent.git
-git clone git@github.com:cmotc/svirfneblin-netmap-widget.git
-git clone git@github.com:cmotc/svirfneblin-netmonitor-widget.git
-git clone git@github.com:cmotc/svirfneblin-network-manager.git
-git clone git@github.com:cmotc/svirfneblin-panel.git
-git clone git@github.com:cmotc/svirfneblin-quake-hud.git
-git clone git@github.com:cmotc/svirfneblin-session.git
-git clone git@github.com:cmotc/syncthing-cli.git
-git clone git@github.com:cmotc/torbrowser-launcher.git
-git clone git@github.com:cmotc/burst-link.git
-git clone git@github.com:cmotc/toxcore.git
-git clone git@github.com:cmotc/tox-vapi.git
-git clone git@github.com:cmotc/toxvpn.git
-git clone git@github.com:cmotc/tribler.git
-git clone git@github.com:cmotc/urcd.git
-git clone git@github.com:cmotc/vaLAIR.git
-git clone git@github.com:cmotc/LAIRArt.git
-git clone git@github.com:cmotc/vaLAIR-map-server.git
-git clone git@github.com:cmotc/WarSMS.git
-git clone git@github.com:cmotc/wgdda.git
+git clone git@github.com:cmotc/1plus1toolkit.git 1plus1toolkit
+git clone git@github.com:cmotc/android_kernel_motorola_msm8610.git android_kernel_motorola_msm8610
+git clone git@github.com:cmotc/android_kernel_samsung_schS738c.git android_kernel_samsung_schS738c
+git clone git@github.com:cmotc/Android-Kitchen.git Android-Kitchen
+git clone git@github.com:cmotc/android-scullery.git android-scullery
+git clone git@github.com:cmotc/apt-git.git apt-git
+git clone git@github.com:cmotc/ath6kl-firmware.git ath6kl-firmware
+git clone git@github.com:cmotc/awesome-conky-hud.git awesome-conky-hud
+git clone git@github.com:cmotc/awesome-conky-starter.git awesome-conky-starter
+git clone git@github.com:cmotc/awesome-revelation.git awesome-revelation
+git clone git@github.com:cmotc/awesome-widget-project.git awesome-widget-project
+git clone git@github.com:cmotc/burst-link.git burst-link
+git clone git@github.com:cmotc/cjdns.git cjdns
+git clone git@github.com:cmotc/cloudflare-scrape.git cloudflare-scrape
+git clone git@github.com:cmotc/cloudget.git cloudget
+git clone git@github.com:cmotc/conky-clicky.git conky-clicky
+git clone git@github.com:cmotc/debianize-android-rom.git debianize-android-rom
+git clone git@github.com:cmotc/debian_kernel_allwinner_a33.git debian_kernel_allwinner_a33
+git clone git@github.com:cmotc/email_sms_mms_gateways.git email_sms_mms_gateways
+git clone git@github.com:cmotc/fdroid-git.git fdroid-git
+git clone git@github.com:cmotc/fireblock.git fireblock
+git clone git@github.com:cmotc/nightly-env.git .git
+git clone git@github.com:cmotc/github-ssh-autorotate.git github-ssh-autorotate
+git clone git@github.com:cmotc/gittorrent gittorrent
+git clone git@github.com:cmotc/grepemails.git grepemails
+git clone git@github.com:cmotc/hidblock.git hidblock
+git clone git@github.com:cmotc/joker.git joker
+git clone git@github.com:cmotc/linux.git linux
+git clone git@github.com:cmotc/lua-github.git lua-github
+git clone git@github.com:cmotc/namecoin-core.git namecoin-core
+git clone git@github.com:cmotc/nightly-env.git nightly-env
+git clone git@github.com:cmotc/nmcontrol.git nmcontrol
+git clone git@github.com:cmotc/open-ath9k-htc-firmware.git open-ath9k-htc-firmware
+git clone git@github.com:cmotc/Raccoon.git Raccoon
+git clone git@github.com:cmotc/ratox.git ratox
+git clone git@github.com:cmotc/sdl2-vapi.git sdl2-vapi
+git clone git@github.com:cmotc/smali.git smali
+git clone git@github.com:cmotc/spacehamster.git spacehamster
+git clone git@github.com:cmotc/spssg spssg
+git clone git@github.com:cmotc/svirfneblin-alarm-widget.git svirfneblin-alarm-widget
+git clone git@github.com:cmotc/svirfneblin-battery-widget.git svirfneblin-battery-widget
+git clone git@github.com:cmotc/svirfneblin-conky-hud.git svirfneblin-conky-hud
+git clone git@github.com:cmotc/svirfneblin-conky-starter.git svirfneblin-conky-starter
+git clone git@github.com:cmotc/svirfneblin-florence-config.git svirfneblin-florence-config
+git clone git@github.com:cmotc/svirfneblin-goblin svirfneblin-goblin
+git clone git@github.com:cmotc/svirfneblin-hidcontrol-widget.git svirfneblin-hidcontrol-widget
+git clone git@github.com:cmotc/svirfneblin-keyring-agent.git svirfneblin-keyring-agent
+git clone git@github.com:cmotc/svirfneblin-netmap-widget.git svirfneblin-netmap-widget
+git clone git@github.com:cmotc/svirfneblin-netmonitor-widget.git svirfneblin-netmonitor-widget
+git clone git@github.com:cmotc/svirfneblin-network-manager.git svirfneblin-network-manager
+git clone git@github.com:cmotc/svirfneblin-panel.git svirfneblin-panel
+git clone git@github.com:cmotc/svirfneblin-quake-hud.git svirfneblin-quake-hud
+git clone git@github.com:cmotc/svirfneblin-session.git svirfneblin-session
+git clone git@github.com:cmotc/syncthing-cli.git syncthing-cli
+git clone git@github.com:cmotc/tartrazine.git tartrazine
+git clone git@github.com:cmotc/torbrowser-launcher.git torbrowser-launcher
+git clone git@github.com:cmotc/toxcore.git toxcore
+git clone git@github.com:cmotc/tox-vapi.git tox-vapi
+git clone git@github.com:cmotc/toxvpn.git toxvpn
+git clone git@github.com:cmotc/tribler.git tribler
+git clone git@github.com:cmotc/urcd.git urcd
+git clone git@github.com:cmotc/vaLAIR.git valair
+git clone git@github.com:cmotc/vaLAIR.git valair-20160118
+git clone git@github.com:cmotc/LAIRArt.git valair-data
+git clone git@github.com:cmotc/vaLAIR-map-server.git valair-map-server
+git clone git@github.com:cmotc/WarSMS.git WarSMS
+git clone git@github.com:cmotc/wgdda.git wgdda
