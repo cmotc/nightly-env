@@ -1,0 +1,32 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package toxcore
+dpkg-buildpackage: source version 0.0.0+20150630.r3444-1~deb8u+1
+dpkg-buildpackage: source distribution stable
+dpkg-buildpackage: source changed by Kill Your TV <killyourtv@i2pmail.org>
+ dpkg-source --before-build toxcore
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with autoreconf,systemd --parallel
+   dh_testdir -O--parallel
+   dh_auto_clean -O--parallel
+   dh_autoreconf_clean -O--parallel
+   dh_clean -O--parallel
+ dpkg-source -b toxcore
+dpkg-source: error: can't build with source format '3.0 (quilt)': no upstream tarball found at ../toxcore_0.0.0+20150630.r3444.orig.tar.{bz2,gz,lzma,xz}
+dpkg-buildpackage: error: dpkg-source -b toxcore gave error exit status 255
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package toxcore
+dpkg-buildpackage: source version 0.0.0+20150630.r3444-1~deb8u+1
+dpkg-buildpackage: source distribution stable
+dpkg-buildpackage: source changed by Kill Your TV <killyourtv@i2pmail.org>
+ dpkg-source --before-build toxcore20160124
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with autoreconf,systemd --parallel
+   dh_testdir -O--parallel
+   dh_auto_clean -O--parallel
+   dh_autoreconf_clean -O--parallel
+   dh_clean -O--parallel
+ dpkg-source -b toxcore20160124
+dpkg-source: error: can't build with source format '3.0 (quilt)': no upstream tarball found at ../toxcore_0.0.0+20150630.r3444.orig.tar.{bz2,gz,lzma,xz}
+dpkg-buildpackage: error: dpkg-source -b toxcore20160124 gave error exit status 255
