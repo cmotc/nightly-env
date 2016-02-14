@@ -244,7 +244,15 @@ clone(){
     cd $WORKDIR
     for line in $(cat "./.clone"); do
 		tmpline=$(echo "$line" | tr "+" " " )
-		git clone "$tmpline" || git clone $(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
+		i=1
+		for t in $tmpline;
+			if [ $i != 1]; then
+			if [ -d "$t/.git"]; then
+				git pull
+			else
+				git clone "$tmpline" || git clone $(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
+			fi
+			fi
 		#echo " $tmpline" || echo " "$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 	done
     for d in *; do

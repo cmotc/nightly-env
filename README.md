@@ -116,5 +116,3 @@ Issues
    guessing. This will make supporting more package types and more package
    building tools and techniques easier.
    
-   * Make clone script automatically run pull\_upstream\_subrepositories when it
-   encounters an existing repository
