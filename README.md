@@ -93,8 +93,23 @@ Could have more features.
 Issues
 ------
 
-Debian Specific for now. Experimental support for simple Android projects using
-Ant. Gradle and Maven are on the way once that's done. Might support RPM in the
-future. Arch and Gentoo people can do what they want if they need it. They know
-what's up. I just don't care to learn a dozen packaging systems at once when 
-like, 3 is the most I have the energy for.
+   * Debian Specific for now. Experimental support for simple Android projects using
+   Ant. Gradle and Maven are on the way once that's done. Might support RPM in the
+   future. Arch and Gentoo people can do what they want if they need it. They know
+   what's up. I just don't care to learn a dozen packaging systems at once when 
+   like, 3 is the most I have the energy for.
+
+   * make clone function more versatile. Right now it just ignores a directory
+   if a repository already exists there. I want to change that so it will pull
+   updates from the current branch of any repository if a repository already
+   exists there.
+   
+   * Break more functionality into smaller chunks. Right now the build
+   function is huge and duplicates a pretty sizable amount of code. Write a
+   generic function for building according to script, then existing spec, then
+   guessing. This will make supporting more package types and more package
+   building tools and techniques easier.
+   
+   * Clarify update, force\_sub\_update function naming, if possible fold update
+   into clone and get rid of it(or vice-versa). For reference, update pulls in
+   updates from branches, force\_sub\_update
