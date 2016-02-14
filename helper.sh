@@ -242,7 +242,7 @@ genclone(){
         remote=$(git remote -v)
         for word in $remote; do
             if [ `echo "$word" | grep 'git@' ` ]; then
-                echo "git clone $word $subdir" >> ../clone-$(date +%Y%m%d)
+                echo "$word+$subdir" >> ../clone-$(date +%Y%m%d)
             fi
         done
         cd -
@@ -254,7 +254,11 @@ genclone(){
 
 clone(){
     cd $WORKDIR
-    ./.clone
+    for line in $(cat "./.clone"); do
+		tmpline=$(echo "$line" | tr "+" " " )
+		#git clone " $line" || git clone " "$(echo "$line" | sed 's|git@github.com:|https://github.com/|')
+		echo " $tmpline" || echo " "$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
+	done
     for d in *; do
         if [ -f "$d/gitrepos.sh" ]; then
             cd $d
