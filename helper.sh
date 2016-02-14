@@ -204,18 +204,6 @@ build(){
     dustup
 }
 
-#Pull down all the updates from the source repositories.
-update(){
-    cd $WORKDIR
-    for d in *; do
-        if [ -d "$d/.git" ]; then
-            cd $d
-            git pull origin master
-            cd $WORKDIR
-        fi
-    done
-}
-
 #Sign and update packages in remote repository
 upload(){
     cd $WORKDIR
@@ -268,7 +256,7 @@ clone(){
     done
 }
 
-force_update(){
+pull_upstream_subrepositories(){
     cd $WORKDIR
     for d in *; do
         if [ -d "$d/.git" ]; then
@@ -278,7 +266,19 @@ force_update(){
     done
 }
 
-force_sub_update(){
+#Pull down all the updates from the source repositories.
+force_pull_upstream_subrepositories(){
+    cd $WORKDIR
+    for d in *; do
+        if [ -d "$d/.git" ]; then
+            cd $d
+            git pull origin master
+            cd $WORKDIR
+        fi
+    done
+}
+
+force_update_subrepositories(){
     cd $WORKDIR
     for d in *; do
         if [ -d "$d/.git" ]; then
