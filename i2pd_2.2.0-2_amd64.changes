@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Wed, 23 Dec 2015 01:29:40 +0000
+Source: i2pd
+Binary: i2pd i2pd-dbg
+Architecture: source amd64
+Version: 2.2.0-2
+Distribution: unstable
+Urgency: low
+Maintainer: hagen <hagen@i2pmail.org>
+Changed-By: hagen <hagen@i2pmail.org>
+Description:
+ i2pd       - load-balanced unspoofable packet switching network - C++ port
+ i2pd-dbg   - i2pd debugging symbols
+Changes:
+ i2pd (2.2.0-2) unstable; urgency=low
+ .
+   * updated to version 2.2.0
+Checksums-Sha1:
+ 62bde41c9bab45fc7a72c2890ddc5e9fa0708f02 1118 i2pd_2.2.0-2.dsc
+ a9260cde9b47e438cab0b854456f65e9a59a0649 4601224 i2pd_2.2.0.orig.tar.xz
+ 6767a2f3b8373bfa0bb128478680adde5c5d669a 6392 i2pd_2.2.0-2.debian.tar.xz
+ d575413ae9865a498e09af41e18dffd56f5f85a2 615072 i2pd_2.2.0-2_amd64.deb
+ 546b2282343429cceded5516bebf805ba2c28ab6 15436382 i2pd-dbg_2.2.0-2_amd64.deb
+Checksums-Sha256:
+ 270105850d21715518473b4d2deeb00343a9a23e2039206dddf7d16dd67b5290 1118 i2pd_2.2.0-2.dsc
+ 65206d496f07fd943eb405e3be11ea1f4d3c4ff0601de7b16f1b9166a80cd43b 4601224 i2pd_2.2.0.orig.tar.xz
+ cc6390efe59d0907a9d98dd832dc017bd9802856d52992898871fccbac59e8e0 6392 i2pd_2.2.0-2.debian.tar.xz
+ 50d1ec15ce181a46728cd74374080c42e429b8ed605fce351a9f2a67286a0716 615072 i2pd_2.2.0-2_amd64.deb
+ c728b0f679424eb0f788541d7536a0bf88e43a466aa8775dcb752eb32354fce6 15436382 i2pd-dbg_2.2.0-2_amd64.deb
+Files:
+ 27ec0692ab01001f71b91c2c4d82d6dd 1118 net extra i2pd_2.2.0-2.dsc
+ 42772375ec386b6642d69a4649ce7f52 4601224 net extra i2pd_2.2.0.orig.tar.xz
+ c3f1be9dfa20b693ea25c2af1255f130 6392 net extra i2pd_2.2.0-2.debian.tar.xz
+ 1d6d9c5c775c727141e1e80f065e3025 615072 net extra i2pd_2.2.0-2_amd64.deb
+ d6dfbdabaf3860c97ccf21033c04c722 15436382 debug extra i2pd-dbg_2.2.0-2_amd64.deb

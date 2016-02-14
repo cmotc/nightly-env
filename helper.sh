@@ -90,7 +90,7 @@ deb_nosh(){
     DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
     cd "$d" && git pull && cd ..
     cp -Rv "$d" $DEBFOLDERNAME
-    tar -czvf $DEBFOLDERNAME.orig.tar.gz $DEBFOLDERNAME
+    tar -czvf $DEBFOLDERNAME.orig $DEBFOLDERNAME
     t="false"
     cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
     cd $WORKDIR
