@@ -256,8 +256,8 @@ clone(){
     cd $WORKDIR
     for line in $(cat "./.clone"); do
 		tmpline=$(echo "$line" | tr "+" " " )
-		#git clone " $line" || git clone " "$(echo "$line" | sed 's|git@github.com:|https://github.com/|')
-		echo " $tmpline" || echo " "$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
+		git clone " $line" || git clone " "$(echo "$line" | sed 's|git@github.com:|https://github.com/|')
+		#echo " $tmpline" || echo " "$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 	done
     for d in *; do
         if [ -f "$d/gitrepos.sh" ]; then
