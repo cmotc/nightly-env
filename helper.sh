@@ -248,7 +248,9 @@ clone(){
 		for t in $tmpline;
 			if [ $i != 1]; then
 			if [ -d "$t/.git"]; then
+				cd $t
 				git pull
+				cd $WORKDIR
 			else
 				git clone "$tmpline" || git clone $(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 			fi
