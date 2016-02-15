@@ -21,6 +21,7 @@ git@github.com:cmotc/multipoint_tls_verification.git+multipoint_tls_verification
 git@github.com:cmotc/netifrc.git+netifrc
 git@github.com:cmotc/nightly-env.git+nightly-env
 git@github.com:cmotc/nmcontrol.git+nmcontrol
+git@github.com:cmotc/pi-arch-live-config.git+pi-arch-live-config
 git@github.com:cmotc/ratox.git+ratox
 git@github.com:cmotc/sdl2-vapi.git+sdl2-vapi
 git@github.com:cmotc/svirfneblin-alarm-widget.git+svirfneblin-alarm-widget
