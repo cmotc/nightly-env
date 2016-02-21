@@ -84,7 +84,7 @@ dustup(){
 deb_nosh(){
     d="$1"
     echo "$d/debian.sh file not found. Attempting to build package automatically."
-    DEBFOLDERNAME="$d""_"$(date +%Y%m%d)
+    DEBFOLDERNAME="$d""-"$(date +%Y%m%d)
     cd "$d" && git pull && cd ..
     cp -Rv "$d" $DEBFOLDERNAME
     tar -czvf $DEBFOLDERNAME.orig $DEBFOLDERNAME
