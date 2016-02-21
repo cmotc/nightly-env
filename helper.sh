@@ -59,7 +59,7 @@ echo "Loading build helper scripts in $WORKDIR"
 clean(){
     cd $WORKDIR
     echo -n "Removing "
-    rm *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2 *.apk 2> /dev/null
+    rm -rfv *.orig *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2 *.apk 2> /dev/null
     rm log
 }
 
@@ -73,10 +73,13 @@ clobber(){
 #clean up everything but the built packages
 dustup(){
     cd $WORKDIR
-    for d in *; do
-        day=$(date +%Y)
-           rm -rfv "$d-$day*" 2> /dev/null
-		day=$((day-1))
+    day=$(date +%Y)
+    for d in $(ls | grep -v "$day"); do
+	if [ -d "$d" ]; then
+	   echo "$d $day"
+           rm -rfv "$d-$day"* 2> /dev/null
+           rm -rfv "$d_$day"* 2> /dev/null
+	fi
     done
 }
 
