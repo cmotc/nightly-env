@@ -74,12 +74,9 @@ clobber(){
 dustup(){
     cd $WORKDIR
     for d in *; do
-        day=$(date +%Y%m%d)
-        until [ $(echo "$day" | grep "00") ]; do
-	    echo "removing $d-$day"
-            rm -rf "$d-$day" 2> /dev/null
-            day=$((day-1))
-        done
+        day=$(date +%Y)
+           rm -rfv "$d-$day*" 2> /dev/null
+		day=$((day-1))
     done
 }
 
@@ -201,7 +198,6 @@ build(){
     if [ "$1" = "upload" ] ; then
         upload
     fi
-    dustup
 }
 
 #Sign and update packages in remote repository
