@@ -59,8 +59,8 @@ echo "Loading build helper scripts in $WORKDIR"
 clean(){
     cd $WORKDIR
     echo -n "Removing "
-    rm -rfv *.orig *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2 *.apk 2> /dev/null
-    rm log
+    \rm -rfv *.orig *.build *.dsc *.deb  *.changes *.tar.gz *.*.tar.gz *.tar.xz *.*.tar.xz *.tar.bz2 *.*.tar.bz2 *.apk 2> /dev/null
+    \rm log
 }
 
 #clean up everything including unfinished folders
@@ -77,8 +77,8 @@ dustup(){
     for d in $(ls | grep -v "$day"); do
 	if [ -d "$d" ]; then
 	   echo "$d $day"
-           rm -rfv "$d-$day"* 2> /dev/null
-           rm -rfv "$d_$day"* 2> /dev/null
+           \rm -rfv "$d-$day"* 2> /dev/null
+           \rm -rfv "$d_$day"* 2> /dev/null
 	fi
     done
 }
@@ -254,8 +254,10 @@ clone(){
 					git clone "$tmpline" || git clone $(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 				fi
 			fi
+			i=$(expr 1 + 1)
 		done
-		#echo " $tmpline" || echo " "$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
+		echo -n "cloned repo into folder: "
+		echo " $tmpline" || echo " "$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 	done
     for d in *; do
         if [ -f "$d/gitrepos.sh" ]; then

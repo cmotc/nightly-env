@@ -1,0 +1,49 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package nitlanguage
+dpkg-buildpackage: source version 20160313-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by dyngar <dyngar@dyngar.local>
+ dpkg-source --before-build nitlanguage_20160313
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b nitlanguage_20160313
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building nitlanguage using existing ./nitlanguage_20160313.orig.tar.xz
+dpkg-source: error: cannot represent change to bin/nit: binary file contents changed
+dpkg-source: error: add bin/nit in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitc: binary file contents changed
+dpkg-source: error: add bin/nitc in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitdbg_client: binary file contents changed
+dpkg-source: error: add bin/nitdbg_client in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitdoc: binary file contents changed
+dpkg-source: error: add bin/nitdoc in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitlight: binary file contents changed
+dpkg-source: error: add bin/nitlight in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitls: binary file contents changed
+dpkg-source: error: add bin/nitls in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitmetrics: binary file contents changed
+dpkg-source: error: add bin/nitmetrics in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitpick: binary file contents changed
+dpkg-source: error: add bin/nitpick in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitpretty: binary file contents changed
+dpkg-source: error: add bin/nitpretty in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitrestful: binary file contents changed
+dpkg-source: error: add bin/nitrestful in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitserial: binary file contents changed
+dpkg-source: error: add bin/nitserial in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitunit: binary file contents changed
+dpkg-source: error: add bin/nitunit in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to bin/nitx: binary file contents changed
+dpkg-source: error: add bin/nitx in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to c_src/nitc: binary file contents changed
+dpkg-source: error: add c_src/nitc in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to lib/markdown/nitmd: binary file contents changed
+dpkg-source: error: add lib/markdown/nitmd in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: cannot represent change to src/nitc_0: binary file contents changed
+dpkg-source: error: add src/nitc_0 in debian/source/include-binaries if you want to store the modified binary in the debian tarball
+dpkg-source: error: unrepresentable changes to source
+dpkg-buildpackage: error: dpkg-source -b nitlanguage_20160313 gave error exit status 2
