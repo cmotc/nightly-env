@@ -1,1 +1,6 @@
 */
+*.orig.tar.*
+*.deb
+*.debian.tar.*
+*.build
+*.changes
