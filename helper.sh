@@ -229,12 +229,16 @@ genclone(){
         cd "$subdir"
         remote=$(git remote -v)
         for word in $remote; do
+	    echo $word
             if [ `echo "$word" | grep 'git@' ` ]; then
-                echo "$word+$subdir" >> ../clone-$(date +%Y%m%d)
+                echo "$word+$subdir" | tee -a ../clone-$(date +%Y%m%d)
+	    elif [ `echo "$word" | grep 'https://' ` ]; then
+                echo "$word+$subdir" | tee -a ../clone-$(date +%Y%m%d)
             fi
         done
         cd -
     done
+    mv .clone .clone.bak
     awk '!seen[$0]++' ./clone-$(date +%Y%m%d) > ./.clone
     rm ./clone-$(date +%Y%m%d)
     chmod a+x ./.clone
@@ -252,7 +256,9 @@ clone(){
 					git pull
 					cd $WORKDIR
 				else
-					git clone "$tmpline" || git clone $(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
+					httpsline=$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
+					sshline=$(echo "$tmpline" | sed 's|https://github.com/|git@github.com:|')
+					git clone "$sshline" || git clone "$httpsline"
 				fi
 			fi
 			i=$(expr 1 + 1)
