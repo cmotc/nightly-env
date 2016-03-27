@@ -6,3 +6,11 @@ git@github.com:cmotc/move-bootpart-to-usb.git+move-bootpart-to-usb
 git@github.com:cmotc/move-bootpart-to-usb.git+move-bootpart-to-usb
 git@github.com:cmotc/simple-repo-debigger.git+simple-repo-debigger
 git@github.com:cmotc/simple-repo-debigger.git+simple-repo-debigger
+git@github.com:cmotc/fireaxe-kernel-grsec-4.4.git+fireaxe-kernel-grsec-4.4
+git@github.com:cmotc/fireaxe-kernel-grsec-4.4.git+fireaxe-kernel-grsec-4.4
+git@github.com:cmotc/nightly-env.git+.git
+git@github.com:cmotc/nightly-env.git+.git
+git@github.com:cmotc/move-bootpart-to-usb.git+move-bootpart-to-usb
+git@github.com:cmotc/move-bootpart-to-usb.git+move-bootpart-to-usb
+git@github.com:cmotc/simple-repo-debigger.git+simple-repo-debigger
+git@github.com:cmotc/simple-repo-debigger.git+simple-repo-debigger
