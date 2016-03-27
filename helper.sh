@@ -250,7 +250,7 @@ clone(){
 		i=1
 		for t in $tmpline; do
 			if [ $i != 1 ]; then
-				echo $i
+				echo $t
 				if [ -d "$t/.git"]; then
 					cd $t
 					git pull
