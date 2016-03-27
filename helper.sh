@@ -250,6 +250,7 @@ clone(){
 		i=1
 		for t in $tmpline; do
 			if [ $i != 1 ]; then
+				echo $i
 				if [ -d "$t/.git"]; then
 					cd $t
 					git pull
@@ -257,11 +258,10 @@ clone(){
 				else
 					httpsline=$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 					sshline=$(echo "$tmpline" | sed 's|https://github.com/|git@github.com:|')
-					echo "rly $sshline"
-#					echo $httpsline
-					git clone $sshline #1> /dev/null
-#					if 
-#					git clone $httpsline &> /dev/null
+					git clone " $sshline" #1> /dev/null
+#					if [ -d "$t/.git" ]; then
+#						git clone " $httpsline"
+#					fi
 				fi
 			fi
 			i=$(expr 1 + 1)
