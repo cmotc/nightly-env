@@ -251,7 +251,7 @@ clone(){
 		for t in $tmpline; do
 			if [ $i != 1 ]; then
 				echo $t
-				if [ -d "$t/.git"]; then
+				if [ -d "$t/.git" ]; then
 					cd $t
 					git pull
 					cd $WORKDIR
@@ -259,9 +259,9 @@ clone(){
 					httpsline=$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 					sshline=$(echo "$tmpline" | sed 's|https://github.com/|git@github.com:|')
 					git clone " $sshline" #1> /dev/null
-#					if [ -d "$t/.git" ]; then
-#						git clone " $httpsline"
-#					fi
+					if [ -d "$t/.git" ]; then
+						git clone " $httpsline"
+					fi
 				fi
 			fi
 			i=$(expr 1 + 1)
