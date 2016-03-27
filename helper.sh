@@ -257,15 +257,15 @@ clone(){
 				else
 					httpsline=$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 					sshline=$(echo "$tmpline" | sed 's|https://github.com/|git@github.com:|')
-					echo $sshline
-					echo $httpsline
-					git clone "$sshline" &> /dev/null || git clone "$httpsline" &> /dev/null
+					echo "rly $sshline"
+#					echo $httpsline
+					git clone "$sshline" #1> /dev/null
+#					if 
+#					git clone "$httpsline" &> /dev/null
 				fi
 			fi
 			i=$(expr 1 + 1)
 		done
-		echo -n "cloned repo into folder: "
-		echo " $tmpline" || echo " "$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 	done
     for d in *; do
         if [ -f "$d/gitrepos.sh" ]; then
