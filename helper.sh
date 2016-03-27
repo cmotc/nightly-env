@@ -257,7 +257,9 @@ clone(){
 				else
 					httpsline=$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 					sshline=$(echo "$tmpline" | sed 's|https://github.com/|git@github.com:|')
-					git clone "$sshline" || git clone "$httpsline"
+					echo $sshline
+					echo $httpsline
+					git clone "$sshline" &> /dev/null || git clone "$httpsline" &> /dev/null
 				fi
 			fi
 			i=$(expr 1 + 1)
