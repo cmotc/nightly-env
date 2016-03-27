@@ -229,7 +229,6 @@ genclone(){
         cd "$subdir"
         remote=$(git remote -v)
         for word in $remote; do
-	    echo $word
             if [ `echo "$word" | grep 'git@' ` ]; then
                 echo "$word+$subdir" | tee -a ../clone-$(date +%Y%m%d)
 	    elif [ `echo "$word" | grep 'https://' ` ]; then
