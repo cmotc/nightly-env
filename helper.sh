@@ -4,6 +4,7 @@
 # script.
 
 USE_APT_GIT="no"
+APT_GIT_DIR="../apt-git"
 GITHUB_USE_SSH="no"
 GITHUB_USERNAME="error_empty_user"
 
@@ -319,21 +320,21 @@ genrepo(){
 #    options leave the definition of those terms open to interpretation.
     cd $WORKDIR
     if [ "$USE_APT_GIT" = "yes" ]; then
-        if [ -d "$WORKDIR/../repository" ]; then
+        if [ -d "$WORKDIR/$APT_GIT_DIR" ]; then
             if [ $(ls "$WORKDIR/*.deb") ]; then
-                if [ $(cat "$WORKDIR/../repository/.debian" | grep "1") ]; then
+                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.debian" | grep "1") ]; then
                     git remote add debian "$GITHUB_URL/apt-git/apt-git.git"
                     git pull origin debian
                 fi
             fi
             if [ $(ls "$WORKDIR/*.apk") ]; then
-                if [ $(cat "$WORKDIR/../repository/.android" | grep "1") ]; then
+                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.android" | grep "1") ]; then
                     git remote add droid "$GITHUB_URL/apt-git/fdroid-git.git"
                     git pull origin droid
                 fi
             fi
             if [ $(ls "$WORKDIR/*.rpm") ]; then
-               if [ $(cat "$WORKDIR/../repository/.redhat" | grep "1") ]; then
+               if [ $(cat "$WORKDIR/$APT_GIT_DIR/.redhat" | grep "1") ]; then
                    git remote add redhat "$GITHUB_URL/apt-git/rpm-git.git"
                    git pull origin redhat
                fi
@@ -341,19 +342,19 @@ genrepo(){
         else
             git clone "$GITHUB_URL"repo-git/repo-git.git
             if [ $(ls "$WORKDIR/*.deb") ]; then
-                if [ $(cat "$WORKDIR/../repository/.debian" | grep "1") ]; then
+                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.debian" | grep "1") ]; then
                     git remote add debian "$GITHUB_URL/apt-git/apt-git.git"
                     git pull origin debian
                 fi
             fi
             if [ $(ls "$WORKDIR/*.apk") ]; then
-                if [ $(cat "$WORKDIR/../repository/.android" | grep "1") ]; then
+                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.android" | grep "1") ]; then
                     git remote add droid "$GITHUB_URL/apt-git/fdroid-git.git"
                     git pull origin droid
                 fi
             fi
             if [ $(ls "$WORKDIR/*.rpm") ]; then
-                if [ $(cat "$WORKDIR/../repository/.redhat" | grep "1") ]; then
+                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.redhat" | grep "1") ]; then
                     git remote add redhat "$GITHUB_URL/apt-git/rpm-git.git"
                     git pull origin redhat
                 fi
