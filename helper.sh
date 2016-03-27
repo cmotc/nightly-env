@@ -259,9 +259,9 @@ clone(){
 					httpsline=$(echo "$tmpline" | sed 's|git@github.com:|https://github.com/|')
 					sshline=$(echo "$tmpline" | sed 's|https://github.com/|git@github.com:|')
 					echo "test $sshline"
-					git clone " " $sshline #1> /dev/null
+					git clone $sshline #1> /dev/null
 					if [ -d "$t/.git" ]; then
-						git clone " " $httpsline
+						git clone $httpsline
 					fi
 				fi
 			fi
