@@ -303,7 +303,7 @@ force_update_subrepositories(){
     for d in *; do
         if [ -d "$d/.git" ]; then
             cd $d && git commit -am "$(date)"
-            git push --set-upstream origin master
+            git push --set-upstream origin "$(git branch | tr -d " " | tr -d \* )"
             cd $WORKDIR
         fi
     done
