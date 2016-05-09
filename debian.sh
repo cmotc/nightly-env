@@ -10,7 +10,11 @@ if [ -n "$BASH_VERSION" ]; then
 else
 	TOME=$( cd "$( dirname "$0" )" && pwd )
 fi
+<<<<<<< HEAD
 cd $TOME 
+=======
+cd $TOME
+>>>>>>> 715207548c27d5850f81a88512dbb33d7cfdd07e
 
 git pull origin master
 
