@@ -1,8 +1,3 @@
-git@github.com:cmotc/fireaxe-kernel-grsec-4.4.git+fireaxe-kernel-grsec-4.4
-git@github.com:cmotc/nightly-env.git+.git
-git@github.com:cmotc/move-bootpart-to-usb.git+move-bootpart-to-usb
-git@github.com:cmotc/simple-repo-debigger.git+simple-repo-debigger
-https://github.com/cmotc/apt-git.git+apt-git
 https://github.com/cmotc/auto-sort.git+auto-sort
 https://github.com/cmotc/awesome+awesome-3.5.6
 https://github.com/cmotc/awesome-conky-hud.git+awesome-conky-hud
@@ -18,8 +13,10 @@ https://github.com/cmotc/elogind.git+elogind
 https://github.com/cmotc/elogind.git+elogind-working
 https://github.com/cmotc/email_sms_mms_gateways.git+email_sms_mms_gateways
 https://github.com/cmotc/fdroid-git.git+fdroid-git
+https://github.com/cmotc/fireaxe-kernel-grsec-4.4.git+fireaxe-kernel-grsec-4.4
 https://github.com/cmotc/fireblock.git+fireblock
 https://github.com/cmotc/fskit.git+fskit
+https://github.com/cmotc/nightly-env+.git
 https://github.com/cmotc/grepemails.git+grepemails
 https://github.com/cmotc/hatox.git+hatox
 https://github.com/cmotc/hidblock.git+hidblock
@@ -29,6 +26,7 @@ https://github.com/cmotc/lb-docs.git+lb-docs
 https://github.com/cmotc/libpstat.git+libpstat
 https://github.com/cmotc/libump.git+libump
 https://github.com/cmotc/man-archive.git+man-archive
+https://github.com/cmotc/move-bootpart-to-usb.git+move-bootpart-to-usb
 https://github.com/cmotc/multipoint_tls_verification.git+multipoint_tls_verification
 https://github.com/cmotc/netifrc.git+netifrc
 https://github.com/cmotc/nightly-env.git+nightly-env
@@ -39,6 +37,7 @@ https://github.com/cmotc/pi-arch-live-config.git+pi-arch-live-config
 https://github.com/cmotc/proxychains-ng.git+proxychains-ng
 https://github.com/cmotc/ratox+ratox
 https://github.com/cmotc/sdl2-vapi.git+sdl2-vapi
+https://github.com/cmotc/simple-repo-debigger.git+simple-repo-debigger
 https://github.com/cmotc/svirfneblin-alarm-widget.git+svirfneblin-alarm-widget
 https://github.com/cmotc/svirfneblin-battery-widget.git+svirfneblin-battery-widget
 https://github.com/cmotc/svirfneblin-conky-hud.git+svirfneblin-conky-hud

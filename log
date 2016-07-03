@@ -1,0 +1,81 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: source package awesome-revelation
+dpkg-buildpackage: source version 20160626-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by root <root@devuan.local>
+ dpkg-source --before-build awesome-revelation-20160626
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b awesome-revelation-20160626
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building awesome-revelation using existing ./awesome-revelation_20160626.orig.tar.xz
+dpkg-source: info: building awesome-revelation in awesome-revelation_20160626-1.debian.tar.xz
+dpkg-source: info: building awesome-revelation in awesome-revelation_20160626-1.dsc
+ debian/rules build
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+   dh_install
+cp: cannot stat ‘debian/tmp/init.lua’: No such file or directory
+dh_install: cp -a debian/tmp/init.lua debian/awesome-revelation/etc/xdg/awesome/revelation/ returned exit code 1
+debian/rules:22: recipe for target 'binary' failed
+make: *** [binary] Error 2
+dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit status 2
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: warning: using a gain-root-command while being root
+dpkg-buildpackage: source package awesome-conky-hud
+dpkg-buildpackage: source version 20160626-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by root <root@devuan.local>
+ dpkg-source --before-build awesome-conky-hud-20160626
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b awesome-conky-hud-20160626
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building awesome-conky-hud using existing ./awesome-conky-hud_20160626.orig.tar.xz
+dpkg-source: warning: ignoring deletion of file README.md, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file LICENSE, use --include-removal to override
+dpkg-source: warning: ignoring deletion of file debian.sh, use --include-removal to override
+dpkg-source: warning: ignoring deletion of directory usr
+dpkg-source: warning: ignoring deletion of directory usr/bin
+dpkg-source: warning: ignoring deletion of file usr/bin/awmconky, use --include-removal to override
+dpkg-source: warning: ignoring deletion of directory usr/share
+dpkg-source: warning: ignoring deletion of directory usr/share/doc
+dpkg-source: warning: ignoring deletion of directory usr/share/doc/awesome-conky-hud
+dpkg-source: warning: ignoring deletion of file usr/share/doc/awesome-conky-hud/README.md, use --include-removal to override
+dpkg-source: warning: ignoring deletion of directory etc
+dpkg-source: warning: ignoring deletion of file etc/conkyrc, use --include-removal to override
+dpkg-source: warning: ignoring deletion of directory etc/xdg
+dpkg-source: warning: ignoring deletion of directory etc/xdg/awesome
+dpkg-source: warning: ignoring deletion of file etc/xdg/awesome/rc.lua.hud.example, use --include-removal to override
+dpkg-source: warning: ignoring deletion of directory etc/xdg/awesome/conky
+dpkg-source: warning: ignoring deletion of file etc/xdg/awesome/conky/hud.lua, use --include-removal to override
+dpkg-source: warning: ignoring deletion of directory etc/xdg/awesome/debian
+dpkg-source: warning: ignoring deletion of file etc/xdg/awesome/debian/menu.lua, use --include-removal to override
+dpkg-source: warning: executable mode 0755 of 'awesome-widget-project/debian.sh' will not be represented in diff
+dpkg-source: info: local changes detected, the modified files are:
+ awesome-conky-hud-20160626/awesome-widget-project/LICENSE
+ awesome-conky-hud-20160626/awesome-widget-project/README.md
+ awesome-conky-hud-20160626/awesome-widget-project/debian.sh
+ awesome-conky-hud-20160626/awesome-widget-project/etc/xdg/awesome/debian/menu.lua
+ awesome-conky-hud-20160626/awesome-widget-project/etc/xdg/awesome/rc.lua.example
+ awesome-conky-hud-20160626/awesome-widget-project/usr/bin/aweproj
+dpkg-source: error: aborting due to unexpected upstream changes, see /tmp/awesome-conky-hud_20160626-1.diff.N0Qoq5
+dpkg-source: info: you can integrate the local changes with dpkg-source --commit
+dpkg-buildpackage: error: dpkg-source -b awesome-conky-hud-20160626 gave error exit status 2
