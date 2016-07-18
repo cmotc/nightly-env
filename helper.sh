@@ -151,18 +151,18 @@ build(){
         if [ "$1" != "upload" ]; then
             d="$1"
             echo "$d"
-            #deb_hash $d
-            if [ -f "$d/debian.sh" ]; then
-                if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-                    #. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-                    cd $d && . ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-                    cd $WORKDIR
-                fi
+            deb_hash $d
+#            if [ -f "$d/debian.sh" ]; then
+#                if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
+#                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+#                    cd $d && . ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+#                    cd $WORKDIR
+#                fi
 #            else
 #                if [ -d "$d/debian" ]; then
 #                    deb_nosh "$d"
 #                fi
-            fi
+#            fi
 #            if [ -f "$d/rpm.sh" ]; then
 #                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
 #                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
@@ -184,18 +184,18 @@ build(){
         fi
     else
         for d in *; do
-            #deb_hash $d
-            if [ -f "$d/debian.sh" ]; then
-                if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-                    #. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-                    cd $d && . ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-                    cd $WORKDIR
-                fi
+            deb_hash $d
+#            if [ -f "$d/debian.sh" ]; then
+#                if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
+#                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+#                    cd $d && . ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+#                    cd $WORKDIR
+#                fi
 #            else
 #                if [ -d "$d/debian" ]; then
 #                    deb_nosh "$d"
 #                fi
-            fi
+#            fi
 #            if [ -f "$d/rpm.sh" ]; then
 #                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
 #                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
