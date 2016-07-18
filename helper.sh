@@ -80,6 +80,7 @@ dustup(){
 	   echo "$d $day"
            \rm -rfv "$d-$day"* 2> /dev/null
            \rm -rfv "$d_$day"* 2> /dev/null
+           \rm -rfv "$d$day"* 2> /dev/null
 	fi
     done
 }
@@ -138,65 +139,65 @@ build(){
             echo "$d"
             if [ -f "$d/debian.sh" ]; then
                 if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME 
+                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
                     cd $WORKDIR
                 fi
-            else
-                if [ -d "$d/debian" ]; then
-                    deb_nosh "$d"
-                fi
+#            else
+#                if [ -d "$d/debian" ]; then
+#                    deb_nosh "$d"
+#                fi
             fi
-            if [ -f "$d/rpm.sh" ]; then
-                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
-                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
-                    cd $WORKDIR
-                fi
-            else
-                if [ -f "$d/*.spec"]; then
-                    rpm_nosh "$d"
-                fi
-            fi
-            if [ -f "$d/droid.sh" ]; then
-                if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
-                    . "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
-                    cd $WORKDIR
-                fi
-            else
-                droid_nosh "$d"
-            fi
+#            if [ -f "$d/rpm.sh" ]; then
+#                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
+#                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
+#                    cd $WORKDIR
+#                fi
+#            else
+#                if [ -f "$d/*.spec"]; then
+#                    rpm_nosh "$d"
+#                fi
+#            fi
+#            if [ -f "$d/droid.sh" ]; then
+#                if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
+#                    . "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
+#                    cd $WORKDIR
+#                fi
+#            else
+#                droid_nosh "$d"
+#            fi
         fi
     else
         for d in *; do
             if [ -f "$d/debian.sh" ]; then
                 if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME 
+                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
                     cd $WORKDIR
                 fi
-            else
-                if [ -d "$d/debian" ]; then
-                    deb_nosh "$d"
-                fi
+#            else
+#                if [ -d "$d/debian" ]; then
+#                    deb_nosh "$d"
+#                fi
             fi
-            if [ -f "$d/rpm.sh" ]; then
-                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
-                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
-                    cd $WORKDIR
-                fi
-            else
-                if [ -f "$d/*.spec"]; then
-                    rpm_nosh "$d"
-                else
-                    echo "Not enough information to build .rpm package"
-                fi
-            fi
-            if [ -f "$d/droid.sh" ]; then
-                if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
-                    . "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
-                    cd $WORKDIR
-                fi
-            else
-                droid_nosh "$d"
-            fi
+#            if [ -f "$d/rpm.sh" ]; then
+#                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
+#                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
+#                    cd $WORKDIR
+#                fi
+#            else
+#                if [ -f "$d/*.spec"]; then
+#                    rpm_nosh "$d"
+#                else
+#                    echo "Not enough information to build .rpm package"
+#                fi
+#            fi
+#            if [ -f "$d/droid.sh" ]; then
+#                if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
+#                    . "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
+#                    cd $WORKDIR
+#                fi
+#            else
+#                droid_nosh "$d"
+#            fi
         done
     fi
     if [ "$1" = "upload" ] ; then
@@ -310,7 +311,7 @@ force_update_subrepositories(){
 }
 
 #generate a repository.
-genrepo(){ 
+genrepo(){
 #    This command should be able to generate a repository for upload.
 #    Right now I'm just using apt-git, which is just a little hack I use to
 #    host a few debian packages on github pages. apt-git's probably going to
