@@ -111,6 +111,22 @@ deb_nosh(){
     cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
     cd $WORKDIR
 }
+
+rpm_hash(){
+            if [ -f "$d/rpm.sh" ]; then
+                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
+                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
+                    cd $WORKDIR
+                fi
+            else
+                if [ -f "$d/*.spec"]; then
+                    rpm_nosh "$d"
+                else
+                    echo "Not enough information to build .rpm package"
+                fi
+            fi
+}
+
 #Helper for building redhat packages with no alterations
 rpm_nosh(){
     d="$1"
@@ -118,8 +134,18 @@ rpm_nosh(){
     cd $WORKDIR
 }
 
+apk_hash(){
+            if [ -f "$d/droid.sh" ]; then
+                if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
+                    . "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
+                    cd $WORKDIR
+                fi
+            else
+                apk_nosh "$d"
+            fi
+}
 #Helper for building android packages with no alterations
-droid_nosh(){
+apk_nosh(){
     d="$1"
     $DROIDFOLDERNAME="$d""_"$(date +%Y%m%d)
     cd "$d" && git pull && cd ../
@@ -152,70 +178,14 @@ build(){
             d="$1"
             echo "$d"
             deb_hash $d
-#            if [ -f "$d/debian.sh" ]; then
-#                if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-#                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-#                    cd $d && . ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-#                    cd $WORKDIR
-#                fi
-#            else
-#                if [ -d "$d/debian" ]; then
-#                    deb_nosh "$d"
-#                fi
-#            fi
-#            if [ -f "$d/rpm.sh" ]; then
-#                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
-#                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
-#                    cd $WORKDIR
-#                fi
-#            else
-#                if [ -f "$d/*.spec"]; then
-#                    rpm_nosh "$d"
-#                fi
-#            fi
-#            if [ -f "$d/droid.sh" ]; then
-#                if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
-#                    . "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
-#                    cd $WORKDIR
-#                fi
-#            else
-#                droid_nosh "$d"
-#            fi
+            #rpm_hash $d
+            #apk_hash $d
         fi
     else
         for d in *; do
             deb_hash $d
-#            if [ -f "$d/debian.sh" ]; then
-#                if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-#                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-#                    cd $d && . ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-#                    cd $WORKDIR
-#                fi
-#            else
-#                if [ -d "$d/debian" ]; then
-#                    deb_nosh "$d"
-#                fi
-#            fi
-#            if [ -f "$d/rpm.sh" ]; then
-#                if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
-#                    . "$d/rpm.sh" && echo "<<<Built $RPMFOLDERNAME>>>" && rm -rf $RPMFOLDERNAME #&& cd ..
-#                    cd $WORKDIR
-#                fi
-#            else
-#                if [ -f "$d/*.spec"]; then
-#                    rpm_nosh "$d"
-#                else
-#                    echo "Not enough information to build .rpm package"
-#                fi
-#            fi
-#            if [ -f "$d/droid.sh" ]; then
-#                if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
-#                    . "$d/rpm.sh" && echo "<<<Built $DROIDFOLDERNAME>>>" && rm -rf $DROIDFOLDERNAME #&& cd ..
-#                    cd $WORKDIR
-#                fi
-#            else
-#                droid_nosh "$d"
-#            fi
+            #rpm_hash $d
+            #apk_hash $d
         done
     fi
     if [ "$1" = "upload" ] ; then
