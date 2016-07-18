@@ -112,6 +112,7 @@ deb_nosh(){
     cd $WORKDIR
 }
 
+#Helper for redhat package logic
 rpm_hash(){
             if [ -f "$d/rpm.sh" ]; then
                 if [ "$USE_RPMSH_SCRIPTS" = "y" ]; then
@@ -134,6 +135,7 @@ rpm_nosh(){
     cd $WORKDIR
 }
 
+#Helper for android package logic
 apk_hash(){
             if [ -f "$d/droid.sh" ]; then
                 if [ "$USE_DROIDSH_SCRIPTS" = "y" ]; then
