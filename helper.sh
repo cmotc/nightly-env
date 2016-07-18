@@ -171,7 +171,7 @@ build(){
             if [ -f "$d/debian.sh" ]; then
                 if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
                     #. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
-                    cd $d && ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+                    cd $d && . ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
                     cd $WORKDIR
                 fi
 #            else
