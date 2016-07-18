@@ -85,6 +85,20 @@ dustup(){
     done
 }
 
+#Helper for determining whether build script is provided
+deb_hash(){
+    if [ -f "$d/debian.sh" ]; then
+        if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
+            . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+            cd $WORKDIR
+        fi
+        else
+        if [ -d "$d/debian" ]; then
+             deb_nosh "$d"
+        fi
+    fi
+}
+
 #Helper for building debian packages with no alterations
 deb_nosh(){
     d="$1"
@@ -139,7 +153,8 @@ build(){
             echo "$d"
             if [ -f "$d/debian.sh" ]; then
                 if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
-                    . "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+                    #. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
+                    cd $d && . ./debian.sh && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
                     cd $WORKDIR
                 fi
 #            else
