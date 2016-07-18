@@ -151,6 +151,7 @@ build(){
         if [ "$1" != "upload" ]; then
             d="$1"
             echo "$d"
+            #deb_hash $d
             if [ -f "$d/debian.sh" ]; then
                 if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
                     #. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
@@ -183,6 +184,7 @@ build(){
         fi
     else
         for d in *; do
+            #deb_hash $d
             if [ -f "$d/debian.sh" ]; then
                 if [ "$USE_DEBSH_SCRIPTS" = "Y" ]; then
                     #. "$d/debian.sh" && echo "<<<Built $DEBFOLDERNAME>>>" && rm -rf $DEBFOLDERNAME
