@@ -3,8 +3,6 @@
 # Use can add any of these variables to ~/.fyrixrc to alter the behavior of the
 # script.
 
-USE_APT_GIT="no"
-APT_GIT_DIR="../apt-git"
 GITHUB_USE_SSH="no"
 GITHUB_USERNAME="error_empty_user"
 
@@ -25,20 +23,6 @@ else
     USE_ABS_PATH="yes"
 fi
 
-if [ "$USE_APT_GIT" = "yes" ]; then
-    if [ "$GITHUB_USERNAME" != "error_empty_user" ]; then
-        if [ "$GITHUB_USE_SSH" != "no" ]; then
-            GITHUB_URL="git@github.com/$GITHUB_USERNAME"
-        else
-            GITHUB_URL="https://github.com/$GITHUB_USERNAME"
-        fi
-    else
-        echo "ERROR! Please specify your github username to use apt-git. SSH
-keys are also reccommended."
-        exit
-    fi
-fi
-
 USE_DEBSH_SCRIPTS="Y"
 USE_RPMSH_SCRIPTS="N"
 USE_DROIDSH_SCRIPTS="N"
@@ -54,6 +38,9 @@ if [ "$USE_ABS_PATH" = "yes" ]; then
     WORKDIR=$(cd `dirname $0` && pwd)
 fi
 
+if [ -z "$REPODIR" ]; then
+    REPODIR="$WORKDIR/../repository"
+fi
 echo "Loading build helper scripts in $WORKDIR"
 
 #clean up everything but unfinished folders
@@ -151,7 +138,6 @@ apk_nosh(){
     d="$1"
     $DROIDFOLDERNAME="$d""_"$(date +%Y%m%d)
     cd "$d" && git pull && cd ../
-    cd "$d" && git pull && cd ..
     cp -Rv "$d" $DROIDFOLDERNAME
 #You know what? Fuck it. Might be useful.
     tar -czvf $DROIDFOLDERNAME.orig.tar.gz $DROIDFOLDERNAME
@@ -198,16 +184,13 @@ build(){
 #Sign and update packages in remote repository
 upload(){
     cd $WORKDIR
-    rm -rf ../repository/packages/
-    mkdir -p ../repository/packages/
-    cp *.build *.changes *.tar.xz *.dsc *.deb ../repository/packages/
-    if [ ! -d ../repository ]; then
+    if [ ! -d "$REPODIR" ]; then
         genrepo
     fi
-    cd $WORKDIR
-    cd ../repository/
-    rm -rf debian
-    ./apt-git --check
+    rm $REPODIR/packages/* -rf $REPODIR/debian/*
+    cp *.build *.changes *.tar.* *.orig.tar.* *.dsc *.deb $REPODIR/packages/
+    cd $REPODIR
+    apt-now
 }
 
 #generate regeneration script
@@ -302,61 +285,5 @@ force_update_subrepositories(){
 
 #generate a repository.
 genrepo(){
-#    This command should be able to generate a repository for upload.
-#    Right now I'm just using apt-git, which is just a little hack I use to
-#    host a few debian packages on github pages. apt-git's probably going to
-#    become pkg-git when it can also structure other types of repositories.
-#    Besides that, it should also be able to do other things, like with aptly
-#    and all the other tools for automatically structuring repositories. This
-#    needs to be done in part to remove dependencies on github itself.
-#    Bitbucket has a similar setup which is cool, but the fewer proprietary
-#    dependencies the better and that means self hosting. Which is easy
-#    because they're just https servers which means you can shoehorn one into
-#    pretty much anything that'll give you the space to do it. Which makes
-#    this all a little daunting, because my whole goal is to make this system
-#    even more approachable, customizable, and decentralized and all those
-#    options leave the definition of those terms open to interpretation.
-    cd $WORKDIR
-    if [ "$USE_APT_GIT" = "yes" ]; then
-        if [ -d "$WORKDIR/$APT_GIT_DIR" ]; then
-            if [ $(ls "$WORKDIR/*.deb") ]; then
-                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.debian" | grep "1") ]; then
-                    git remote add debian "$GITHUB_URL/apt-git/apt-git.git"
-                    git pull origin debian
-                fi
-            fi
-            if [ $(ls "$WORKDIR/*.apk") ]; then
-                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.android" | grep "1") ]; then
-                    git remote add droid "$GITHUB_URL/apt-git/fdroid-git.git"
-                    git pull origin droid
-                fi
-            fi
-            if [ $(ls "$WORKDIR/*.rpm") ]; then
-               if [ $(cat "$WORKDIR/$APT_GIT_DIR/.redhat" | grep "1") ]; then
-                   git remote add redhat "$GITHUB_URL/apt-git/rpm-git.git"
-                   git pull origin redhat
-               fi
-            fi
-        else
-            git clone "$GITHUB_URL"repo-git/repo-git.git
-            if [ $(ls "$WORKDIR/*.deb") ]; then
-                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.debian" | grep "1") ]; then
-                    git remote add debian "$GITHUB_URL/apt-git/apt-git.git"
-                    git pull origin debian
-                fi
-            fi
-            if [ $(ls "$WORKDIR/*.apk") ]; then
-                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.android" | grep "1") ]; then
-                    git remote add droid "$GITHUB_URL/apt-git/fdroid-git.git"
-                    git pull origin droid
-                fi
-            fi
-            if [ $(ls "$WORKDIR/*.rpm") ]; then
-                if [ $(cat "$WORKDIR/$APT_GIT_DIR/.redhat" | grep "1") ]; then
-                    git remote add redhat "$GITHUB_URL/apt-git/rpm-git.git"
-                    git pull origin redhat
-                fi
-            fi
-        fi
-    fi
+    git clone https://github.com/cmotc/apt-now "$REPODIR"
 }
