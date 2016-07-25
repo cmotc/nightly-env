@@ -15,7 +15,7 @@ git@github.com:cmotc/elogind.git+elogind
 git@github.com:cmotc/elogind.git+elogind-working
 git@github.com:cmotc/email_sms_mms_gateways.git+email_sms_mms_gateways
 git@github.com:cmotc/fdroid-git.git+fdroid-git
-git@github.com:cmotc/fireaxe-kernel-grsec-4.4.git+fireaxe-kernel-grsec-4.4
+git@github.com:cmotc/fireaxe-kernel-grsec.git+fireaxe-kernel-grsec
 git@github.com:cmotc/fireblock.git+fireblock
 git@github.com:cmotc/fskit.git+fskit
 git@github.com:cmotc/nightly-env.git+.git
@@ -27,7 +27,9 @@ git@github.com:cmotc/joker.git+joker
 git@github.com:cmotc/lb-docs.git+lb-docs
 git@github.com:cmotc/libpstat.git+libpstat
 git@github.com:cmotc/libump.git+libump
+https://github.com/cmotc/mac-asshole+mac-asshole
 git@github.com:cmotc/man-archive.git+man-archive
+git@github.com:cmotc/masterscreen.git+masterscreen
 git@github.com:cmotc/move-bootpart-to-usb.git+move-bootpart-to-usb
 git@github.com:cmotc/multipoint_tls_verification.git+multipoint_tls_verification
 git@github.com:cmotc/netifrc.git+netifrc
@@ -37,13 +39,13 @@ git@github.com:cmotc/nmcontrol.git+nmcontrol
 git@github.com:cmotc/oysttyer.git+oysttyer
 git@github.com:cmotc/nightly-env.git+paxctld
 git@github.com:cmotc/pi-arch-live-config.git+pi-arch-live-config
-https://github.com/cmotc/pkpage.git+pkpage
+git@github.com:cmotc/pkpage+pkpage
 git@github.com:cmotc/proxychains-ng.git+proxychains-ng
 git@github.com:cmotc/ratox+ratox
 git@github.com:cmotc/sdl2-vapi.git+sdl2-vapi
 git@github.com:cmotc/simple-repo-debigger.git+simple-repo-debigger
-https://github.com/cmotc/sinit+sinit
-https://notabug.org/kl3/spm/+spm
+git@github.com:cmotc/sinit+sinit
+git@github.com:cmotc/slock+slock
 git@github.com:cmotc/svirfneblin-alarm-widget.git+svirfneblin-alarm-widget
 git@github.com:cmotc/svirfneblin-battery-widget.git+svirfneblin-battery-widget
 git@github.com:cmotc/svirfneblin-conky-hud.git+svirfneblin-conky-hud
@@ -66,6 +68,7 @@ git@github.com:cmotc/toxic.git+toxic
 git@github.com:cmotc/tox-vapi.git+tox-vapi
 git@github.com:cmotc/toxvpn.git+toxvpn
 git@github.com:cmotc/tribler.git+tribler
+git@github.com:cmotc/uhttpd.git+uhttpd
 git@github.com:cmotc/uzbl_apper.git+uzbl_apper
 git@github.com:cmotc/vaLAIR.git+valair
 git@github.com:cmotc/LAIRArt.git+valair-data
