@@ -91,11 +91,11 @@ deb_nosh(){
     d="$1"
     echo "$d/debian.sh file not found. Attempting to build package automatically."
     DEBFOLDERNAME="$d""-"$(date +%Y%m%d)
-    cd "$d" && git pull && cd ..
     cp -Rv "$d" $DEBFOLDERNAME
-    tar -czvf $DEBFOLDERNAME.orig $DEBFOLDERNAME
-    t="false"
-    cd $DEBFOLDERNAME && t="true" && debuild -us -uc >> ../log
+    tar -czvf $d$VERS.orig.tar.gz $DEBFOLDERNAME
+    cd $DEBFOLDERNAME
+    pwd
+    debuild --no-tgz-check
     cd $WORKDIR
 }
 
