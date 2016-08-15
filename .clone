@@ -20,6 +20,7 @@ git@github.com:cmotc/fireblock.git+fireblock
 git@github.com:cmotc/fskit.git+fskit
 git@github.com:cmotc/nightly-env.git+.git
 git@github.com:cmotc/grepemails.git+grepemails
+git@github.com:cmotc/gsl1680.git+gsl1680
 git@github.com:cmotc/gslX68X.git+gslx68x
 git@github.com:cmotc/hatox.git+hatox
 git@github.com:cmotc/hidblock.git+hidblock
