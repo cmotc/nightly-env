@@ -20,9 +20,11 @@ git@github.com:cmotc/fireblock.git+fireblock
 git@github.com:cmotc/fskit.git+fskit
 git@github.com:cmotc/nightly-env.git+.git
 git@github.com:cmotc/grepemails.git+grepemails
+git@github.com:cmotc/gslX68X.git+gslx68x
 git@github.com:cmotc/hatox.git+hatox
 git@github.com:cmotc/hidblock.git+hidblock
 git@github.com:cmotc/i2pd+i2pd
+git@github.com:cmotc/nightly-env.git+info
 git@github.com:cmotc/joker.git+joker
 git@github.com:cmotc/lb-docs.git+lb-docs
 git@github.com:cmotc/libpstat.git+libpstat
@@ -42,6 +44,7 @@ git@github.com:cmotc/pi-arch-live-config.git+pi-arch-live-config
 git@github.com:cmotc/pkpage+pkpage
 git@github.com:cmotc/proxychains-ng.git+proxychains-ng
 git@github.com:cmotc/ratox+ratox
+git@github.com:cmotc/scpage.git+scpage
 git@github.com:cmotc/sdl2-vapi.git+sdl2-vapi
 git@github.com:cmotc/simple-repo-debigger.git+simple-repo-debigger
 git@github.com:cmotc/sinit+sinit
