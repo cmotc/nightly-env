@@ -1,0 +1,28 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package gslx68x
+dpkg-buildpackage: source version 20160815-1
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by idk <idk@devuan.local>
+ dpkg-source --before-build gslx68x-20160815
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+make[1]: Entering directory '/home/idk/Projects/nightly-env/gslx68x-20160815'
+make -C /lib/modules/4.6.0-1-grsec-amd64/build ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- M=/home/idk/Projects/nightly-env/gslx68x-20160815 clean
+make[2]: Entering directory '/usr/src/linux-headers-4.6.0-1-grsec-amd64'
+/usr/src/linux-headers-4.6.0-1-common-grsec/Makefile:630: scripts/Makefile.gcc-plugins: No such file or directory
+make[4]: *** No rule to make target 'scripts/Makefile.gcc-plugins'.  Stop.
+Makefile:146: recipe for target 'sub-make' failed
+make[3]: *** [sub-make] Error 2
+Makefile:8: recipe for target 'all' failed
+make[2]: *** [all] Error 2
+make[2]: Leaving directory '/usr/src/linux-headers-4.6.0-1-grsec-amd64'
+Makefile:29: recipe for target 'clean' failed
+make[1]: *** [clean] Error 2
+make[1]: Leaving directory '/home/idk/Projects/nightly-env/gslx68x-20160815'
+dh_auto_clean: make -j1 clean returned exit code 2
+debian/rules:22: recipe for target 'clean' failed
+make: *** [clean] Error 2
+dpkg-buildpackage: error: fakeroot debian/rules clean gave error exit status 2
